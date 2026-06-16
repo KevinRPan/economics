@@ -1,0 +1,26 @@
+name: Scheduled data refresh
+
+# BLS releases the unemployment rate monthly (~first Friday). This cron pings the
+# Cloudflare Pages deploy hook so Pages runs a fresh build — which re-fetches FRED
+# (via the prebuild data script) and regenerates the OG images. The FRED key lives
+# in Cloudflare Pages build env; this workflow only needs the deploy-hook URL.
+on:
+  schedule:
+    # 12:00 UTC on the 7th of every month (after the monthly jobs report lands).
+    - cron: "0 12 7 * *"
+  workflow_dispatch: {}
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages rebuild
+        env:
+          DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$DEPLOY_HOOK" ]; then
+            echo "::error::CLOUDFLARE_DEPLOY_HOOK_URL secret is not set."
+            exit 1
+          fi
+          curl -fsS -X POST "$DEPLOY_HOOK"
+          echo "Triggered Cloudflare Pages rebuild."

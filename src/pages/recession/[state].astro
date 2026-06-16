@@ -1,0 +1,27 @@
+---
+// Per-state recession card → econ.kpan.dev/recession/{state}
+// One static HTML page per state, each with region-specific OG meta.
+import CardLayout from "../../layouts/CardLayout.astro";
+import RecessionCard from "../../components/RecessionCard.tsx";
+import data from "../../data/recession.json";
+import { STATES } from "../../lib/regions.mjs";
+import { pageMeta } from "../../lib/pagemeta";
+import type { RecessionData } from "../../lib/types";
+
+export function getStaticPaths() {
+  const recession = data as RecessionData;
+  return STATES.filter((s) => recession.regions[s.code]).map((s) => ({
+    params: { state: s.slug },
+    props: { code: s.code },
+  }));
+}
+
+const { code } = Astro.props as { code: string };
+const recession = data as RecessionData;
+const region = recession.regions[code];
+const meta = pageMeta(region);
+---
+
+<CardLayout title={meta.title} description={meta.description} path={meta.path} ogImage={meta.ogImage}>
+  <RecessionCard client:load data={recession} initialRegion={code} />
+</CardLayout>

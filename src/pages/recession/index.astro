@@ -1,0 +1,15 @@
+---
+// National recession card → econ.kpan.dev/recession
+import CardLayout from "../../layouts/CardLayout.astro";
+import RecessionCard from "../../components/RecessionCard.tsx";
+import data from "../../data/recession.json";
+import { pageMeta } from "../../lib/pagemeta";
+import type { RecessionData } from "../../lib/types";
+
+const recession = data as RecessionData;
+const meta = pageMeta(recession.regions.national);
+---
+
+<CardLayout title={meta.title} description={meta.description} path={meta.path} ogImage={meta.ogImage}>
+  <RecessionCard client:load data={recession} initialRegion="national" />
+</CardLayout>
