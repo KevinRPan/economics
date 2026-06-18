@@ -82,7 +82,7 @@ export function fmt(gauge, value) {
 // here we keep everything the card + OG image need to render and explain.
 
 export const GAUGES = {
-  // 1) Buffett Indicator — total US market cap (Wilshire 5000 full-cap proxy) ÷ GDP.
+  // 1) Buffett Indicator — total US corporate equities (Fed Z.1) ÷ GDP.
   buffett: {
     id: "buffett",
     slug: "buffett",
@@ -91,15 +91,15 @@ export const GAUGES = {
     short: "Buffett Indicator",
     decimals: 0,
     suffix: "%",
-    scaleMin: 60,
-    scaleMax: 240,
-    keyLine: { value: 175, label: "FROTHY 175%" },
-    chart: { domain: [60, 240], ticks: [100, 175, 240], refLabel: "175% frothy" },
+    scaleMin: 80,
+    scaleMax: 260,
+    keyLine: { value: 185, label: "FROTHY 185%" },
+    chart: { domain: [80, 260], ticks: [120, 185, 260], refLabel: "185% frothy" },
     bands: [
-      { upTo: 100, key: "cheap", label: "Undervalued", accent: C.cool },
-      { upTo: 140, key: "fair", label: "Fair", accent: C.green },
-      { upTo: 175, key: "elevated", label: "Elevated", accent: C.amber },
-      { upTo: 205, key: "frothy", label: "Frothy", accent: C.amber },
+      { upTo: 110, key: "cheap", label: "Undervalued", accent: C.cool },
+      { upTo: 150, key: "fair", label: "Fair", accent: C.green },
+      { upTo: 185, key: "elevated", label: "Elevated", accent: C.amber },
+      { upTo: 220, key: "frothy", label: "Frothy", accent: C.amber },
       { upTo: Infinity, key: "mania", label: "Mania", accent: C.red },
     ],
     heads: {
@@ -122,13 +122,13 @@ export const GAUGES = {
     },
     method: {
       blurb:
-        "The Buffett Indicator compares the total value of the US stock market to the size of the economy (GDP). Warren Buffett once called market cap ÷ GDP 'probably the best single measure of where valuations stand.' Above ~100% means stocks are worth more than a year of output; today's market runs far higher.",
+        "The Buffett Indicator compares the total value of US stocks to the size of the economy (GDP). Warren Buffett once called market value ÷ GDP 'probably the best single measure of where valuations stand.' Above ~100% means stocks are worth more than a year of national output — and today's market sits far higher.",
       bullets: [
         "It's a valuation gauge, not a timer — markets can stay 'expensive' for years.",
-        "Modern readings sit structurally higher than last century (more global, higher-margin firms).",
-        "Market cap here is proxied by the Wilshire 5000 full-cap index; GDP is quarterly and forward-filled.",
+        "Modern readings run structurally higher than last century (more global, higher-margin firms).",
+        "Equities = total US corporate equities from the Fed's Z.1 accounts; GDP is quarterly, forward-filled.",
       ],
-      footnote: "market cap ≈ FRED WILL5000PRFC · GDP = FRED GDP",
+      footnote: "equities = FRED NCBEILQ027S (Fed Z.1) · GDP = FRED GDP",
     },
   },
 

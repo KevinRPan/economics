@@ -71,20 +71,24 @@ async function buildLive() {
     }
   }
 
-  // Buffett: market-cap proxy (Wilshire 5000 full cap) ÷ GDP, as a percent.
+  // Buffett: total US corporate equities (Fed Z.1) ÷ GDP, as a percent.
+  // NCBEILQ027S is in $ millions and GDP in $ billions, so scale the numerator
+  // down by 1000 before the ratio. (The Wilshire 5000 series this used to read,
+  // WILL5000PRFC, was pulled from FRED on 2024-06-03, so we use the maintained
+  // Z.1 corporate-equities measure instead.)
   try {
-    const wilshire = toMonthly(await fredObservations("WILL5000PRFC"));
-    const gdp = toMonthly(await fredObservations("GDP")); // quarterly, billions $
-    const gdpByMonth = forwardFill(wilshire, gdp);
-    const ratio = wilshire
-      .map((w) => {
-        const g = gdpByMonth.get(monthKey(w.date));
-        return g ? { date: w.date, value: (w.value / g) * 100 } : null;
+    const equities = toMonthly(await fredObservations("NCBEILQ027S")); // quarterly, $ millions
+    const gdp = toMonthly(await fredObservations("GDP")); // quarterly, $ billions
+    const gdpByMonth = forwardFill(equities, gdp);
+    const ratio = equities
+      .map((e) => {
+        const g = gdpByMonth.get(monthKey(e.date));
+        return g ? { date: e.date, value: (e.value / 1000 / g) * 100 } : null;
       })
       .filter(Boolean);
     gauges.buffett = readingFrom(GAUGES.buffett, ratio, true);
   } catch (err) {
-    console.error(`  ✗ buffett (WILL5000PRFC ÷ GDP): ${err.message}`);
+    console.error(`  ✗ buffett (NCBEILQ027S ÷ GDP): ${err.message}`);
   }
 
   const asOf = gauges.vix?.asOf ?? gauges.credit?.asOf ?? gauges.buffett?.asOf;
@@ -94,7 +98,7 @@ async function buildLive() {
 // ── seed mode (no key) ───────────────────────────────────────────────────────
 // Illustrative recent readings + a gentle 24-pt shape so the chart renders.
 const SEED = {
-  buffett: { value: 198, prev: 195, start: 150 },
+  buffett: { value: 225, prev: 221, start: 175 },
   vix: { value: 16.5, prev: 15.2, start: 19 },
   credit: { value: 3.2, prev: 3.05, start: 4.6 },
 };

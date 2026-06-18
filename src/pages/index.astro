@@ -26,7 +26,7 @@ const feed: Item[] = [
     accent: rv.accent,
     value: nat.value.toFixed(2),
   },
-  ...Object.values(GAUGES).map((gauge) => {
+  ...Object.values(GAUGES).filter((gauge) => markets.gauges[gauge.id]).map((gauge) => {
     const r = markets.gauges[gauge.id];
     const v = gaugeVerdict(gauge, r.value, r.prev);
     return {

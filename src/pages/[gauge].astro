@@ -9,10 +9,15 @@ import { gaugePageMeta, GAUGES } from "../lib/pagemeta";
 import type { MarketsData } from "../lib/types";
 
 export function getStaticPaths() {
-  return Object.values(GAUGES).map((gauge) => ({
-    params: { gauge: gauge.slug },
-    props: { gaugeId: gauge.id },
-  }));
+  // Only build pages for gauges that actually have data. If a FRED series is
+  // unavailable in a live build, we skip that card rather than crash the build.
+  const gauges = (data as MarketsData).gauges;
+  return Object.values(GAUGES)
+    .filter((gauge) => gauges[gauge.id])
+    .map((gauge) => ({
+      params: { gauge: gauge.slug },
+      props: { gaugeId: gauge.id },
+    }));
 }
 
 const { gaugeId } = Astro.props as { gaugeId: string };
