@@ -86,26 +86,58 @@ npm run preview
   **deploy hook** monthly so data stays fresh. Add the hook URL as the GitHub secret
   `CLOUDFLARE_DEPLOY_HOOK_URL`.
 
-## Adding card #2
+## Market gauges — hype / mania / greed cards
 
-The route is built as a reusable template: card #2 is a new folder under
-`src/pages/`, its own data script + `recession.json`-shaped JSON, and an OG template —
-not a rewrite. Shared verdict/token logic lives in `src/lib/`.
+Cards #2–#4 are a small **reusable gauge engine** sharing one component, one OG
+template, and one data script. Each is a single *derived* market metric on a banded
+scale (calm → mania) with honest per-band copy. All three are FRED-native, so they
+reuse the same build-time fetch + seed fallback as the recession card — no runtime
+calls, no client-exposed key.
+
+| Card | Question | Metric | FRED series |
+| --- | --- | --- | --- |
+| `/buffett` | Are stocks in a bubble? | Market cap ÷ GDP (%) | `WILL5000PRFC` ÷ `GDP` |
+| `/vix` | Is the market too calm? | VIX (the "fear gauge") | `VIXCLS` |
+| `/credit` | Is the bond market greedy? | High-yield credit spread | `BAMLH0A0HYM2` |
+
+`scripts/fetch-markets.mjs` fetches each series, resamples to a monthly grid
+(`scripts/lib/series.mjs`), derives current / prior / 24-month history, and writes
+`src/data/markets.json`. Without a key it writes an illustrative **seed** so the site
+still builds; each gauge is labelled `computed` vs `illustrative`. Gauge config (bands,
+copy, scales) lives in `src/lib/gauges.mjs` so the React island and the build-time OG
+image render identical verdicts.
+
+The home page (`/`) is a **feed** listing every card with a live one-line verdict.
+
+## Adding more cards
+
+Each gauge is a new entry in `GAUGES` (`src/lib/gauges.mjs`) plus a FRED series in
+`scripts/fetch-markets.mjs` — the component, OG template, route (`/[gauge]`), and feed
+entry all pick it up automatically. The recession card remains its own template under
+`src/pages/recession/`. Shared verdict/token logic lives in `src/lib/`.
 
 ## Project layout
 
 ```
 scripts/
   fetch-data.mjs      build-time FRED fetch + Sahm → src/data/recession.json
+  fetch-markets.mjs   FRED fetch for the gauges → src/data/markets.json
   gen-og.mjs          Satori + resvg → public/og/recession-{region}.png
+  gen-og-markets.mjs  Satori + resvg → public/og/{gauge}.png
   lib/sahm.mjs        computeSahm (ported from the prototype)
+  lib/series.mjs      monthly resample + forward-fill helpers
 src/
-  components/RecessionCard.tsx   the ported card (hydrated island)
-  lib/recession.mjs              shared tokens + verdict state machine + copy
+  components/RecessionCard.tsx   the recession card (hydrated island)
+  components/GaugeCard.tsx       reusable gauge card for buffett / vix / credit
+  lib/recession.mjs              recession tokens + verdict state machine + copy
+  lib/gauges.mjs                 gauge config: bands, verdict copy, scales, tokens
   lib/regions.mjs                national + 50 states (names, FRED ids, slugs)
   lib/pagemeta.ts / types.ts     per-page meta + data types
   layouts/CardLayout.astro       static page shell (OG/Twitter meta, footer)
+  pages/index.astro              / — the card feed
   pages/recession/index.astro    /recession (national)
   pages/recession/[state].astro  /recession/{state} (getStaticPaths)
+  pages/[gauge].astro            /buffett · /vix · /credit (getStaticPaths)
   data/recession.json            generated (seed committed)
+  data/markets.json              generated (seed committed)
 ```

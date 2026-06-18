@@ -1,0 +1,25 @@
+---
+// Market hype/mania/greed cards → econ.kpan.dev/{gauge}
+//   /buffett · /vix · /credit
+// One static page per gauge with correct OG meta and a fast crawler unfurl.
+import CardLayout from "../layouts/CardLayout.astro";
+import GaugeCard from "../components/GaugeCard.tsx";
+import data from "../data/markets.json";
+import { gaugePageMeta, GAUGES } from "../lib/pagemeta";
+import type { MarketsData } from "../lib/types";
+
+export function getStaticPaths() {
+  return Object.values(GAUGES).map((gauge) => ({
+    params: { gauge: gauge.slug },
+    props: { gaugeId: gauge.id },
+  }));
+}
+
+const { gaugeId } = Astro.props as { gaugeId: string };
+const markets = data as MarketsData;
+const meta = gaugePageMeta(GAUGES[gaugeId], markets.gauges[gaugeId]);
+---
+
+<CardLayout title={meta.title} description={meta.description} path={meta.path} ogImage={meta.ogImage}>
+  <GaugeCard client:load data={markets} gaugeId={gaugeId} />
+</CardLayout>

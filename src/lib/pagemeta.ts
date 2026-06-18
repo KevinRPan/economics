@@ -1,5 +1,7 @@
 import { verdict, takeawayFor } from "./recession.mjs";
-import type { RegionData } from "./types";
+import { GAUGES, gaugeVerdict, fmt } from "./gauges.mjs";
+import type { Gauge } from "./gauges.mjs";
+import type { RegionData, GaugeReading } from "./types";
 
 // Per-region static page meta: title, description, OG image path, canonical path.
 export function pageMeta(r: RegionData) {
@@ -13,3 +15,16 @@ export function pageMeta(r: RegionData) {
     path,
   };
 }
+
+// Per-gauge static page meta for the market hype/mania/greed cards.
+export function gaugePageMeta(gauge: Gauge, r: GaugeReading) {
+  const v = gaugeVerdict(gauge, r.value, r.prev);
+  return {
+    title: `${gauge.headline} — ${fmt(gauge, r.value)}`,
+    description: `${gauge.short} at ${fmt(gauge, r.value)}. ${v.head} ${gauge.takeaway(r.value)}`,
+    ogImage: `/og/${gauge.id}.png`,
+    path: `/${gauge.slug}`,
+  };
+}
+
+export { GAUGES };

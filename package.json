@@ -5,8 +5,8 @@
   "private": true,
   "description": "econ.kpan.dev — a feed of self-contained economic insight cards. Recession card v1.",
   "scripts": {
-    "data": "node scripts/fetch-data.mjs",
-    "og": "node scripts/gen-og.mjs",
+    "data": "node scripts/fetch-data.mjs && node scripts/fetch-markets.mjs",
+    "og": "node scripts/gen-og.mjs && node scripts/gen-og-markets.mjs",
     "prebuild": "npm run data && npm run og",
     "build": "astro build",
     "dev": "astro dev",
