@@ -1,0 +1,56 @@
+---
+/* Per-card static page shell. Statically rendered so each region gets correct
+   OG/Twitter meta and a fast crawler-friendly unfurl. */
+import "../styles/globals.css";
+
+export interface Props {
+  title: string;
+  description: string;
+  /** absolute path of this page, e.g. "/recession/ca" */
+  path: string;
+  /** site-relative OG image path, e.g. "/og/recession-ca.png" */
+  ogImage: string;
+}
+
+const { title, description, path, ogImage } = Astro.props;
+const site = Astro.site?.toString().replace(/\/$/, "") ?? "https://econ.kpan.dev";
+const canonical = `${site}${path}`;
+const ogImageUrl = `${site}${ogImage}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="econ.kpan.dev" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <meta name="theme-color" content="#081113" />
+  </head>
+  <body>
+    <slot />
+    <footer
+      style="text-align:center; padding:18px 20px 32px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.04em; color:#5c7c79;"
+    >
+      <a href="https://kpan.dev" style="color:#86a39f; text-decoration:none;">by Kevin Pan ↗ kpan.dev</a>
+    </footer>
+  </body>
+</html>

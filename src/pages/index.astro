@@ -1,0 +1,17 @@
+---
+// Root → the recession card (the only card in v1). Static meta-refresh redirect.
+const target = "/recession";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <link rel="canonical" href="https://econ.kpan.dev/recession" />
+    <title>econ.kpan.dev</title>
+  </head>
+  <body style="background:#081113; color:#eaf2f0; font-family:system-ui, sans-serif;">
+    <p style="padding:24px;">Redirecting to <a href={target} style="color:#4fd1a8;">the recession card</a>…</p>
+  </body>
+</html>

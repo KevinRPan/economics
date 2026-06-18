@@ -1,0 +1,24 @@
+name: CI
+
+# Validate that the site builds on every push / PR. Runs in seed mode (no FRED
+# key needed) so it catches breakage without touching secrets.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+        env:
+          # Provide the key if available so CI exercises the live path too;
+          # absent on forks/PRs, the build falls back to seed data.
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
