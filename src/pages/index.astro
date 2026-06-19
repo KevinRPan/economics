@@ -1,17 +1,101 @@
 ---
-// Root → the recession card (the only card in v1). Static meta-refresh redirect.
-const target = "/recession";
+// Root → the card feed. econ.kpan.dev is a feed of self-contained insight cards;
+// this lists them with a live one-line verdict each, linking to the full card.
+import "../styles/globals.css";
+import recessionData from "../data/recession.json";
+import marketsData from "../data/markets.json";
+import { verdict as recessionVerdict } from "../lib/recession.mjs";
+import { GAUGES, gaugeVerdict, fmt } from "../lib/gauges.mjs";
+import type { RecessionData, MarketsData } from "../lib/types";
+
+const recession = recessionData as RecessionData;
+const markets = marketsData as MarketsData;
+
+const nat = recession.regions.national;
+const rv = recessionVerdict(nat.value, nat.prev);
+
+type Item = { href: string; eyebrow: string; headline: string; head: string; label: string; accent: string; value: string };
+
+const feed: Item[] = [
+  {
+    href: "/recession",
+    eyebrow: "Sahm Rule · Recession Nowcast",
+    headline: "Are we in a recession?",
+    head: rv.head,
+    label: rv.label,
+    accent: rv.accent,
+    value: nat.value.toFixed(2),
+  },
+  ...Object.values(GAUGES).filter((gauge) => markets.gauges[gauge.id]).map((gauge) => {
+    const r = markets.gauges[gauge.id];
+    const v = gaugeVerdict(gauge, r.value, r.prev);
+    return {
+      href: `/${gauge.slug}`,
+      eyebrow: gauge.eyebrow,
+      headline: gauge.headline,
+      head: v.head,
+      label: v.label,
+      accent: v.accent,
+      value: fmt(gauge, r.value),
+    };
+  }),
+];
+
+const C = { panel: "#0E1A1C", raised: "#13262A", line: "#27413F", text: "#EAF2F0", muted: "#86A39F", faint: "#5C7C79", backdrop: "#081113" };
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="refresh" content={`0; url=${target}`} />
-    <link rel="canonical" href="https://econ.kpan.dev/recession" />
-    <title>econ.kpan.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>econ.kpan.dev — economic insight cards</title>
+    <meta name="description" content="A feed of self-contained economic insight cards: recession risk, market valuation, fear & greed. One derived metric each, built to be shared." />
+    <link rel="canonical" href="https://econ.kpan.dev/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="econ.kpan.dev" />
+    <meta property="og:title" content="econ.kpan.dev — economic insight cards" />
+    <meta property="og:description" content="Recession risk, market valuation, fear & greed — one derived metric per card, from real data." />
+    <meta property="og:url" content="https://econ.kpan.dev/" />
+    <meta property="og:image" content="https://econ.kpan.dev/og/recession-national.png" />
+    <meta name="theme-color" content="#081113" />
   </head>
-  <body style="background:#081113; color:#eaf2f0; font-family:system-ui, sans-serif;">
-    <p style="padding:24px;">Redirecting to <a href={target} style="color:#4fd1a8;">the recession card</a>…</p>
+  <body style={`background:${C.backdrop}; color:${C.text}; font-family:Inter, system-ui, sans-serif; margin:0;`}>
+    <main style="max-width:520px; margin:0 auto; padding:48px 20px 16px;">
+      <h1 style={`font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:30px; letter-spacing:-.01em; margin:0 0 6px; color:${C.text};`}>
+        econ.kpan.dev
+      </h1>
+      <p style={`font-size:14px; line-height:1.5; color:${C.muted}; margin:0 0 28px;`}>
+        A feed of economic insight cards. Each one takes a single derived metric from real
+        data, answers a question you actually care about, and is built to be screenshotted.
+      </p>
+
+      {feed.map((item) => (
+        <a
+          href={item.href}
+          style={`display:block; text-decoration:none; background:${C.panel}; border:1px solid ${C.line}; border-radius:16px; padding:18px 20px; margin-bottom:14px;`}
+        >
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style={`font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:${C.faint};`}>
+              {item.eyebrow}
+            </span>
+            <span style={`display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:600; color:${item.accent};`}>
+              <span style={`width:7px; height:7px; border-radius:99px; background:${item.accent};`}></span>
+              {item.label.toUpperCase()}
+            </span>
+          </div>
+          <div style={`font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:20px; color:${C.text}; margin:12px 0 4px;`}>
+            {item.headline}
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline;">
+            <span style={`font-size:14px; color:${item.accent};`}>{item.head}</span>
+            <span style={`font-family:'JetBrains Mono', monospace; font-weight:700; font-size:15px; color:${item.accent};`}>{item.value}</span>
+          </div>
+        </a>
+      ))}
+    </main>
+    <footer style={`text-align:center; padding:18px 20px 32px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.04em; color:${C.faint};`}>
+      <a href="https://kpan.dev" style={`color:${C.muted}; text-decoration:none;`}>by Kevin Pan ↗ kpan.dev</a>
+    </footer>
   </body>
 </html>
