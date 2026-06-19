@@ -28,3 +28,31 @@ export interface RecessionData {
   };
   regions: Record<string, RegionData>;
 }
+
+// Shape of src/data/markets.json (written by scripts/fetch-markets.mjs).
+
+export interface GaugePoint {
+  t: string;
+  v: number;
+}
+
+export interface GaugeReading {
+  id: string;
+  slug: string;
+  value: number;
+  prev: number;
+  computed: boolean;
+  asOf: string;
+  series: GaugePoint[];
+}
+
+export interface MarketsData {
+  meta: {
+    asOf: string;
+    asOfLabel: string;
+    generatedAt: string;
+    source: string;
+    live: boolean;
+  };
+  gauges: Record<string, GaugeReading>;
+}
