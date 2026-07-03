@@ -16,6 +16,7 @@ export interface Band {
 export interface Gauge {
   id: string;
   slug: string;
+  group: "economy" | "markets";
   eyebrow: string;
   headline: string;
   short: string;
@@ -58,3 +59,4 @@ export function markerPct(gauge: Gauge, value: number): number;
 export function pctOf(gauge: Gauge, value: number): number;
 export function bandSegments(gauge: Gauge): BandSegment[];
 export function fmt(gauge: Gauge, value: number): string;
+export function pctileLine(r: { pctile?: number | null; sinceYear?: number | null } | null | undefined): string | null;

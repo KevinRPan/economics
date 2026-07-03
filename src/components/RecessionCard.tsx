@@ -57,11 +57,20 @@ export default function RecessionCard({ data, initialRegion }: Props) {
 
   const chartData = useMemo(() => r.series.filter((d) => d.sahm != null).slice(-24), [r]);
 
-  function share() {
+  async function share() {
     const url =
       typeof window !== "undefined"
         ? `${window.location.origin}${pathFor(region)}`
         : `https://econ.kpan.dev${pathFor(region)}`;
+    // Native share sheet where available (mobile), clipboard elsewhere.
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title: "Are we in a recession?", text: `${v.head} ${takeaway}`, url });
+        return;
+      } catch {
+        /* user dismissed the sheet or share failed — fall back to copy */
+      }
+    }
     try {
       navigator.clipboard?.writeText(url);
     } catch {

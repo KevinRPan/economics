@@ -44,6 +44,10 @@ export interface GaugeReading {
   computed: boolean;
   asOf: string;
   series: GaugePoint[];
+  /** full-history percentile rank of the current reading (live builds only) */
+  pctile?: number;
+  /** first year of the metric's FRED history (live builds only) */
+  sinceYear?: number;
 }
 
 export interface MarketsData {
