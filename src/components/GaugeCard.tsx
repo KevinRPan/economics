@@ -3,7 +3,7 @@ import {
   LineChart, Line, XAxis, YAxis, ReferenceLine, ResponsiveContainer, Tooltip,
 } from "recharts";
 import {
-  C, GAUGES, gaugeVerdict, markerPct, bandSegments, fmt,
+  C, GAUGES, gaugeVerdict, markerPct, bandSegments, fmt, pctileLine,
 } from "../lib/gauges.mjs";
 import type { MarketsData } from "../lib/types";
 
@@ -35,15 +35,25 @@ export default function GaugeCard({ data, gaugeId }: Props) {
   const linePct = markerPct(gauge, gauge.keyLine.value);
   const segments = bandSegments(gauge);
   const takeaway = gauge.takeaway(r.value);
+  const context = pctileLine(r);
 
   const chartData = useMemo(() => r.series.slice(-24), [r]);
 
-  function share() {
+  async function share() {
     const path = `/${gauge.slug}`;
     const url =
       typeof window !== "undefined"
         ? `${window.location.origin}${path}`
         : `https://econ.kpan.dev${path}`;
+    // Native share sheet where available (mobile), clipboard elsewhere.
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title: gauge.headline, text: `${v.head} ${takeaway}`, url });
+        return;
+      } catch {
+        /* user dismissed the sheet or share failed — fall back to copy */
+      }
+    }
     try {
       navigator.clipboard?.writeText(url);
     } catch {
@@ -130,9 +140,14 @@ export default function GaugeCard({ data, gaugeId }: Props) {
         </div>
 
         {/* takeaway sentence (screenshot line) */}
-        <p style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500, fontSize: 15.5, color: C.text, margin: "10px 0 20px", lineHeight: 1.35 }}>
+        <p style={{ fontFamily: "'Bricolage Grotesque', sans-serif", fontWeight: 500, fontSize: 15.5, color: C.text, margin: `10px 0 ${context ? 4 : 20}px`, lineHeight: 1.35 }}>
           {takeaway}
         </p>
+        {context && (
+          <p style={{ fontSize: 12.5, color: C.muted, margin: "0 0 20px", lineHeight: 1.4 }}>
+            {context}
+          </p>
+        )}
 
         {/* deep dive */}
         <button

@@ -1,13 +1,17 @@
 name: Scheduled data refresh
 
-# BLS releases the unemployment rate monthly (~first Friday). This cron pings the
-# Cloudflare Pages deploy hook so Pages runs a fresh build — which re-fetches FRED
-# (via the prebuild data script) and regenerates the OG images. The FRED key lives
-# in Cloudflare Pages build env; this workflow only needs the deploy-hook URL.
+# The market gauges (VIX, credit spreads, yield curve) move daily — a monthly
+# rebuild could show "Calm waters" for weeks through a volatility spike. This
+# cron pings the Cloudflare Pages deploy hook every weekday evening (after US
+# markets close and FRED posts the day's series) so Pages runs a fresh build —
+# re-fetching FRED via the prebuild data script and regenerating the OG images.
+# Monthly series (unemployment, CPI) are picked up by the same daily run. The
+# FRED key lives in Cloudflare Pages build env; this workflow only needs the
+# deploy-hook URL.
 on:
   schedule:
-    # 12:00 UTC on the 7th of every month (after the monthly jobs report lands).
-    - cron: "0 12 7 * *"
+    # 23:30 UTC Mon–Fri: after the US close (21:00 UTC) and FRED's daily update.
+    - cron: "30 23 * * 1-5"
   workflow_dispatch: {}
 
 jobs:

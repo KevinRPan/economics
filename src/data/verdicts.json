@@ -1,0 +1,86 @@
+{
+  "updated": "2026-07-03T15:40:12.810Z",
+  "live": false,
+  "cards": {
+    "recession": {
+      "key": "clear",
+      "label": "Clear",
+      "value": 0.2,
+      "asOf": "2026-03-01",
+      "since": "2026-03-01",
+      "history": []
+    },
+    "curve": {
+      "key": "flat",
+      "label": "Flat",
+      "value": 0.55,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "inflation": {
+      "key": "target",
+      "label": "Near target",
+      "value": 2.7,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "wages": {
+      "key": "gaining",
+      "label": "Gaining",
+      "value": 1,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "housing": {
+      "key": "burdened",
+      "label": "Cost-burdened",
+      "value": 31.8,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "stress": {
+      "key": "rising",
+      "label": "Rising strain",
+      "value": 3.2,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "mood": {
+      "key": "greedy",
+      "label": "Greedy",
+      "value": 72,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "buffett": {
+      "key": "mania",
+      "label": "Mania",
+      "value": 225,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "vix": {
+      "key": "calm",
+      "label": "Calm",
+      "value": 16.5,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    },
+    "credit": {
+      "key": "riskon",
+      "label": "Risk-on",
+      "value": 3.2,
+      "asOf": "2026-07-01",
+      "since": "2026-07-01",
+      "history": []
+    }
+  }
+}

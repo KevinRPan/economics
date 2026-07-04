@@ -14,7 +14,7 @@ import { dirname, resolve } from "node:path";
 import { createRequire } from "node:module";
 import satori from "satori";
 import { Resvg } from "@resvg/resvg-js";
-import { C, GAUGES, gaugeVerdict, markerPct, bandSegments, fmt } from "../src/lib/gauges.mjs";
+import { C, GAUGES, gaugeVerdict, markerPct, bandSegments, fmt, pctileLine } from "../src/lib/gauges.mjs";
 
 const require = createRequire(import.meta.url);
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -64,6 +64,7 @@ function template(gauge, r) {
   const linePct = markerPct(gauge, gauge.keyLine.value);
   const segments = bandSegments(gauge);
   const takeaway = gauge.takeaway(r.value);
+  const context = pctileLine(r);
 
   const mono = "JetBrains Mono";
   const display = "Bricolage Grotesque";
@@ -91,13 +92,13 @@ function template(gauge, r) {
       )
     ),
     // headline
-    h("div", { style: { fontFamily: display, fontWeight: 700, fontSize: 56, color: C.text, marginTop: 40 }, children: gauge.headline }),
+    h("div", { style: { fontFamily: display, fontWeight: 700, fontSize: 52, color: C.text, marginTop: 36, lineHeight: 1.08 }, children: gauge.headline }),
     // verdict
-    h("div", { style: { fontFamily: display, fontWeight: 700, fontSize: 56, color: v.accent, marginTop: 8, lineHeight: 1.1 }, children: v.head }),
+    h("div", { style: { fontFamily: display, fontWeight: 700, fontSize: 52, color: v.accent, marginTop: 8, lineHeight: 1.08 }, children: v.head }),
     // banded rail
     h(
       "div",
-      { style: { display: "flex", position: "relative", height: 80, marginTop: 48 } },
+      { style: { display: "flex", position: "relative", height: 80, marginTop: 36 } },
       ...segments.map((s) =>
         h("div", {
           style: {
@@ -113,8 +114,11 @@ function template(gauge, r) {
       // marker value
       h("div", { style: { position: "absolute", top: 52, left: `${pct}%`, transform: "translateX(-50%)", fontFamily: mono, fontWeight: 700, fontSize: 30, color: v.accent, display: "flex" }, children: fmt(gauge, r.value) })
     ),
-    // takeaway
-    h("div", { style: { fontFamily: display, fontWeight: 500, fontSize: 34, color: C.text, marginTop: 40, lineHeight: 1.3 }, children: takeaway }),
+    // takeaway (+ historical-context line when the reading has a percentile)
+    h("div", { style: { fontFamily: display, fontWeight: 500, fontSize: 32, color: C.text, marginTop: 30, lineHeight: 1.25 }, children: takeaway }),
+    ...(context
+      ? [h("div", { style: { fontSize: 22, color: C.muted, marginTop: 10 }, children: context })]
+      : []),
     h("div", { style: { display: "flex", flexGrow: 1 } }),
     // footer
     h(
