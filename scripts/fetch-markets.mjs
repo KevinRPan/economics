@@ -31,13 +31,41 @@ const WINDOW = 24; // months of history kept for the deep-dive chart
 
 async function fredObservations(seriesId) {
   // Full history — the percentile context needs every reading, not just 2019+.
-  const url = `${FRED}?series_id=${seriesId}&api_key=${API_KEY}&file_type=json`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`FRED ${seriesId} → ${res.status} ${res.statusText}`);
-  const json = await res.json();
-  return (json.observations || [])
-    .filter((o) => o.value !== ".")
-    .map((o) => ({ date: o.date, value: +o.value }));
+  if (API_KEY) {
+    try {
+      const url = `${FRED}?series_id=${seriesId}&api_key=${API_KEY}&file_type=json`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const json = await res.json();
+        const obs = (json.observations || [])
+          .filter((o) => o.value !== ".")
+          .map((o) => ({ date: o.date, value: +o.value }));
+        if (obs.length > 0) return obs;
+      }
+    } catch (err) {
+      // Fall through to public CSV
+    }
+  }
+
+  // Fallback to FRED's public CSV endpoint
+  const csvUrl = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}`;
+  const res = await fetch(csvUrl, {
+    headers: { "User-Agent": "econ.kpan.dev/1.0" },
+  });
+  if (!res.ok) throw new Error(`FRED CSV ${seriesId} → ${res.status} ${res.statusText}`);
+  const text = await res.text();
+  const lines = text.trim().split("\n");
+  const obs = [];
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    const [date, valStr] = line.split(",");
+    if (valStr && valStr !== "." && Number.isFinite(+valStr)) {
+      obs.push({ date, value: +valStr });
+    }
+  }
+  if (obs.length === 0) throw new Error(`FRED CSV ${seriesId} yielded 0 observations`);
+  return obs;
 }
 
 // Turn a monthly [{date, value}] series into a gauge reading record.
@@ -227,9 +255,16 @@ function asOfLabel(iso) {
 }
 
 async function main() {
-  const mode = API_KEY ? "LIVE (FRED)" : "SEED (no FRED_API_KEY — illustrative)";
-  console.log(`▶ markets data — ${mode}`);
-  const { gauges, asOf, live } = API_KEY ? await buildLive() : buildSeed();
+  let result;
+  try {
+    console.log("▶ markets data — attempting live fetch from FRED");
+    result = await buildLive();
+    console.log("  live fetch succeeded!");
+  } catch (err) {
+    console.warn(`  live fetch failed (${err.message}), falling back to seed`);
+    result = buildSeed();
+  }
+  const { gauges, asOf, live } = result;
 
   const out = {
     meta: {

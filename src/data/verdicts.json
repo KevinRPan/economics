@@ -1,86 +1,191 @@
 {
-  "updated": "2026-07-03T15:40:12.810Z",
-  "live": false,
+  "updated": "2026-09-14T02:26:05.944Z",
+  "live": true,
   "cards": {
     "recession": {
       "key": "clear",
       "label": "Clear",
-      "value": 0.2,
-      "asOf": "2026-03-01",
+      "value": 0,
+      "asOf": "2026-08-01",
       "since": "2026-03-01",
       "history": []
     },
     "curve": {
-      "key": "flat",
-      "label": "Flat",
-      "value": 0.55,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "normal",
+      "label": "Normal",
+      "value": 0.89,
+      "asOf": "2026-09-11",
+      "since": "2026-09-11",
+      "history": [
+        {
+          "date": "2026-09-11",
+          "from": "flat",
+          "fromLabel": "Flat",
+          "to": "normal",
+          "label": "Normal",
+          "value": 0.89
+        }
+      ]
     },
     "inflation": {
-      "key": "target",
-      "label": "Near target",
-      "value": 2.7,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "elevated",
+      "label": "Elevated",
+      "value": 3.4,
+      "asOf": "2026-08-01",
+      "since": "2026-05-01",
+      "history": [
+        {
+          "date": "2026-05-01",
+          "from": "target",
+          "fromLabel": "Near target",
+          "to": "elevated",
+          "label": "Elevated",
+          "value": 4.2
+        }
+      ]
     },
     "wages": {
-      "key": "gaining",
-      "label": "Gaining",
-      "value": 1,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "holding",
+      "label": "Holding even",
+      "value": 0,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": [
+        {
+          "date": "2026-05-01",
+          "from": "gaining",
+          "fromLabel": "Gaining",
+          "to": "slipping",
+          "label": "Slipping",
+          "value": -0.6
+        },
+        {
+          "date": "2026-08-01",
+          "from": "slipping",
+          "fromLabel": "Slipping",
+          "to": "holding",
+          "label": "Holding even",
+          "value": 0
+        }
+      ]
     },
     "housing": {
       "key": "burdened",
       "label": "Cost-burdened",
-      "value": 31.8,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "value": 30.6,
+      "asOf": "2026-09-10",
+      "since": "2026-09-10",
+      "history": [
+        {
+          "date": "2026-07-02",
+          "from": "burdened",
+          "fromLabel": "Cost-burdened",
+          "to": "stretched",
+          "label": "Stretched",
+          "value": 29
+        },
+        {
+          "date": "2026-09-10",
+          "from": "stretched",
+          "fromLabel": "Stretched",
+          "to": "burdened",
+          "label": "Cost-burdened",
+          "value": 30.6
+        }
+      ]
     },
     "stress": {
-      "key": "rising",
-      "label": "Rising strain",
-      "value": 3.2,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "normal",
+      "label": "Normal",
+      "value": 2.9,
+      "asOf": "2026-04-01",
+      "since": "2026-01-01",
+      "history": [
+        {
+          "date": "2026-01-01",
+          "from": "rising",
+          "fromLabel": "Rising strain",
+          "to": "normal",
+          "label": "Normal",
+          "value": 2.9
+        }
+      ]
     },
     "mood": {
-      "key": "greedy",
-      "label": "Greedy",
-      "value": 72,
-      "asOf": "2026-07-01",
+      "key": "mania",
+      "label": "Mania",
+      "value": 88,
+      "asOf": "2026-09-10",
       "since": "2026-07-01",
-      "history": []
+      "history": [
+        {
+          "date": "2026-07-01",
+          "from": "greedy",
+          "fromLabel": "Greedy",
+          "to": "mania",
+          "label": "Mania",
+          "value": 82
+        }
+      ]
     },
     "buffett": {
       "key": "mania",
       "label": "Mania",
-      "value": 225,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "value": 256,
+      "asOf": "2026-04-01",
+      "since": "2026-04-01",
+      "history": [
+        {
+          "date": "2026-01-01",
+          "from": "mania",
+          "fromLabel": "Mania",
+          "to": "frothy",
+          "label": "Frothy",
+          "value": 218
+        },
+        {
+          "date": "2026-04-01",
+          "from": "frothy",
+          "fromLabel": "Frothy",
+          "to": "mania",
+          "label": "Mania",
+          "value": 256
+        }
+      ]
     },
     "vix": {
-      "key": "calm",
-      "label": "Calm",
-      "value": 16.5,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "normal",
+      "label": "Normal",
+      "value": 17.8,
+      "asOf": "2026-09-10",
+      "since": "2026-09-10",
+      "history": [
+        {
+          "date": "2026-09-10",
+          "from": "calm",
+          "fromLabel": "Calm",
+          "to": "normal",
+          "label": "Normal",
+          "value": 17.8
+        }
+      ]
     },
     "credit": {
-      "key": "riskon",
-      "label": "Risk-on",
-      "value": 3.2,
-      "asOf": "2026-07-01",
-      "since": "2026-07-01",
-      "history": []
+      "key": "reaching",
+      "label": "Reaching for yield",
+      "value": 2.7,
+      "asOf": "2026-09-10",
+      "since": "2026-07-02",
+      "history": [
+        {
+          "date": "2026-07-02",
+          "from": "riskon",
+          "fromLabel": "Risk-on",
+          "to": "reaching",
+          "label": "Reaching for yield",
+          "value": 2.75
+        }
+      ]
     }
   }
 }

@@ -29,14 +29,41 @@ const SERIES_WINDOW = 24; // months of Sahm history kept for the deep-dive chart
 
 // ── FRED fetch helpers ──────────────────────────────────────────────────────
 async function fredObservations(seriesId) {
-  const url = `${FRED}?series_id=${seriesId}&api_key=${API_KEY}&file_type=json&observation_start=2018-01-01`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`FRED ${seriesId} → ${res.status} ${res.statusText}`);
-  const json = await res.json();
-  // [{ date, rate }] in chronological order, missing values ('.') dropped.
-  return (json.observations || [])
-    .filter((o) => o.value !== ".")
-    .map((o) => ({ date: o.date, rate: +o.value }));
+  if (API_KEY) {
+    try {
+      const url = `${FRED}?series_id=${seriesId}&api_key=${API_KEY}&file_type=json&observation_start=2018-01-01`;
+      const res = await fetch(url);
+      if (res.ok) {
+        const json = await res.json();
+        const obs = (json.observations || [])
+          .filter((o) => o.value !== ".")
+          .map((o) => ({ date: o.date, rate: +o.value }));
+        if (obs.length > 0) return obs;
+      }
+    } catch (err) {
+      // Fall through to public CSV
+    }
+  }
+
+  // Fallback to FRED's public CSV endpoint
+  const csvUrl = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}`;
+  const res = await fetch(csvUrl, {
+    headers: { "User-Agent": "econ.kpan.dev/1.0" },
+  });
+  if (!res.ok) throw new Error(`FRED CSV ${seriesId} → ${res.status} ${res.statusText}`);
+  const text = await res.text();
+  const lines = text.trim().split("\n");
+  const obs = [];
+  for (let i = 1; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) continue;
+    const [date, valStr] = line.split(",");
+    if (date >= "2018-01-01" && valStr && valStr !== "." && Number.isFinite(+valStr)) {
+      obs.push({ date, rate: +valStr });
+    }
+  }
+  if (obs.length === 0) throw new Error(`FRED CSV ${seriesId} yielded 0 observations`);
+  return obs;
 }
 
 // Build a region record from a monthly unemployment-rate series.
@@ -175,9 +202,17 @@ function asOfLabel(iso) {
 }
 
 async function main() {
-  const mode = API_KEY ? "LIVE (FRED)" : "SEED (no FRED_API_KEY — illustrative)";
-  console.log(`▶ recession data — ${mode}`);
-  const { regions, asOf, live, crossCheck } = API_KEY ? await buildLive() : buildSeed();
+  let result;
+  try {
+    console.log("▶ recession data — attempting live fetch from FRED");
+    result = await buildLive();
+    if (!result.regions.national) throw new Error("National unemployment series missing");
+    console.log("  live fetch succeeded!");
+  } catch (err) {
+    console.warn(`  live fetch failed (${err.message}), falling back to seed`);
+    result = buildSeed();
+  }
+  const { regions, asOf, live, crossCheck } = result;
 
   const out = {
     meta: {
