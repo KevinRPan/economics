@@ -1,8 +1,29 @@
 import { describe, it, expect } from "vitest";
 import {
-  GAUGES, GAUGE_LIST, bandFor, gaugeVerdict, bandSegments, markerPct, fmt, pctileLine,
+  GAUGES, GAUGE_LIST, TOPICS, TOPIC_LABELS, bandFor, gaugeVerdict, bandSegments, markerPct, fmt, pctileLine,
 } from "../src/lib/gauges.mjs";
 import { statusFor, verdict } from "../src/lib/recession.mjs";
+
+const VALID_TOPICS = ["jobs", "prices", "housing", "growth", "fed", "households", "markets"];
+
+describe("TOPICS catalog", () => {
+  it("exports 7 onboarding topics with plain labels", () => {
+    expect(TOPICS).toHaveLength(7);
+    const expected = [
+      { id: "jobs", label: "Jobs" },
+      { id: "prices", label: "Prices" },
+      { id: "housing", label: "Housing" },
+      { id: "growth", label: "Growth" },
+      { id: "fed", label: "The Fed" },
+      { id: "households", label: "Households" },
+      { id: "markets", label: "Markets" },
+    ];
+    expect(TOPICS).toEqual(expected);
+    for (const t of TOPICS) {
+      expect(TOPIC_LABELS[t.id]).toBe(t.label);
+    }
+  });
+});
 
 describe("bandFor", () => {
   const buffett = GAUGES.buffett;
@@ -49,14 +70,31 @@ describe("rail geometry", () => {
 });
 
 describe("gauge config integrity", () => {
+  it("contains exactly 27 gauges (9 existing + 18 new)", () => {
+    expect(GAUGE_LIST).toHaveLength(27);
+  });
+
   it.each(GAUGE_LIST.map((g) => [g.id, g]))("%s is fully wired", (_id, gauge) => {
     expect(gauge.slug).toBeTruthy();
     expect(["economy", "markets"]).toContain(gauge.group);
+    expect(VALID_TOPICS).toContain(gauge.topic);
+    expect(gauge.eyebrow).toContain("·");
+    expect(gauge.headline).toMatch(/\?$/);
+    expect(gauge.short).toBeTruthy();
+    expect(typeof gauge.decimals).toBe("number");
     expect(gauge.scaleMin).toBeLessThan(gauge.scaleMax);
     expect(gauge.keyLine.value).toBeGreaterThanOrEqual(gauge.scaleMin);
     expect(gauge.keyLine.value).toBeLessThanOrEqual(gauge.scaleMax);
+    expect(gauge.chart.ticks.length).toBeGreaterThan(0);
 
-    // bands: strictly ascending, ending at Infinity, each with copy + accent
+    // method blurb + 3 bullets + footnote
+    expect(gauge.method.blurb).toBeTruthy();
+    expect(gauge.method.bullets).toHaveLength(3);
+    for (const b of gauge.method.bullets) expect(b).toBeTruthy();
+    expect(gauge.method.footnote).toBeTruthy();
+
+    // exactly 5 bands: strictly ascending, ending at Infinity, each with copy + accent
+    expect(gauge.bands).toHaveLength(5);
     const upTos = gauge.bands.map((b) => b.upTo);
     expect(upTos[upTos.length - 1]).toBe(Infinity);
     for (let i = 1; i < upTos.length; i++) expect(upTos[i]).toBeGreaterThan(upTos[i - 1]);

@@ -1,0 +1,78 @@
+---
+// Static preset pages for Signal Lab
+// e.g. /signals/classic-recession, /signals/credit-cracks, etc.
+import { existsSync, readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import CardLayout from "../../layouts/CardLayout.astro";
+import SignalLab from "../../components/dashboard/signal/SignalLab";
+import { PRESETS } from "../../lib/signal-presets.mjs";
+import type { HistoriesData } from "../../lib/dashboard-types";
+
+export function getStaticPaths() {
+  return PRESETS.map((preset) => ({
+    params: { preset: preset.slug },
+    props: { preset },
+  }));
+}
+
+const { preset } = Astro.props as { preset: typeof PRESETS[number] };
+
+let histories: HistoriesData = {
+  meta: { generatedAt: "", live: false, through: "" },
+  indicators: {},
+  targets: {
+    recession: { id: "recession", label: "Recessions", short: "recession", description: "", coverage: { start: "", end: "" }, events: [] },
+    bear: { id: "bear", label: "Stock crashes (20%+)", short: "crash", description: "", coverage: { start: "", end: "" }, events: [] },
+    joblessjump: { id: "joblessjump", label: "Unemployment jumps", short: "joblessjump", description: "", coverage: { start: "", end: "" }, events: [] },
+    inflation: { id: "inflation", label: "Inflation spikes", short: "inflation", description: "", coverage: { start: "", end: "" }, events: [] },
+    housing: { id: "housing", label: "Home prices falling", short: "housing", description: "", coverage: { start: "", end: "" }, events: [] },
+    fedcuts: { id: "fedcuts", label: "Fed starts cutting", short: "fedcuts", description: "", coverage: { start: "", end: "" }, events: [] },
+  },
+};
+
+const historiesPath = resolve("./src/data/histories.json");
+if (existsSync(historiesPath)) {
+  try {
+    histories = JSON.parse(readFileSync(historiesPath, "utf-8"));
+  } catch {
+    // fallback if file is being written
+  }
+}
+
+const title = `${preset.title} · Signal Lab`;
+const description = `${preset.description} Tested against historical data with full hit rate and lead time scorecard.`;
+const path = `/signals/${preset.slug}`;
+const ogImage = `/og/signal-${preset.slug}.png`;
+---
+
+<CardLayout title={title} description={description} path={path} ogImage={ogImage}>
+  <div style="min-height: 100vh; background: #081113; padding-bottom: 30px;">
+    {/* Page Header */}
+    <header style="max-width: 1120px; margin: 0 auto; padding: 28px 16px 12px; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <a href="/dashboard" style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; color: #86A39F; text-decoration: none;">
+          ← BACK TO DASHBOARD
+        </a>
+        <h1 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 26px; font-weight: 700; color: #EAF2F0; margin: 6px 0 2px;">
+          {preset.title}
+        </h1>
+        <p style="font-size: 13px; color: #86A39F; margin: 0;">
+          {preset.description}
+        </p>
+      </div>
+
+      <div style="text-align: right;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5C7C79; text-transform: uppercase;">
+          Signal Lab Preset
+        </span>
+      </div>
+    </header>
+
+    <SignalLab
+      client:load
+      histories={histories}
+      boardIds={[]}
+      initialSignal={preset.signal}
+    />
+  </div>
+</CardLayout>

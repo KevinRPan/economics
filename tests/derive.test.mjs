@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { yoyPct, ratioSeries, mortgageMonthly, percentileRank } from "../scripts/lib/derive.mjs";
+import { yoyPct, ratioSeries, mortgageMonthly, percentileRank, diffSeries, ma3OfChange } from "../scripts/lib/derive.mjs";
 
 function months(startYear, startMonth, values) {
   return values.map((value, i) => {
@@ -60,5 +60,31 @@ describe("percentileRank", () => {
   });
   it("returns null for an empty history", () => {
     expect(percentileRank([], 5)).toBeNull();
+  });
+});
+
+describe("diffSeries and ma3OfChange", () => {
+  it("computes monthly difference", () => {
+    const s = [
+      { date: "2020-01-01", value: 100 },
+      { date: "2020-02-01", value: 105 },
+      { date: "2020-03-01", value: 103 },
+    ];
+    expect(diffSeries(s)).toEqual([
+      { date: "2020-02-01", value: 5 },
+      { date: "2020-03-01", value: -2 },
+    ]);
+  });
+
+  it("computes 3-month average of change", () => {
+    const s = [
+      { date: "2020-01-01", value: 100 },
+      { date: "2020-02-01", value: 110 }, // +10
+      { date: "2020-03-01", value: 130 }, // +20
+      { date: "2020-04-01", value: 160 }, // +30 -> sum = 60 / 3 = 20
+    ];
+    expect(ma3OfChange(s)).toEqual([
+      { date: "2020-04-01", value: 20 },
+    ]);
   });
 });

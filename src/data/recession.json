@@ -1,14 +1,14 @@
 {
   "meta": {
     "trigger": 0.5,
-    "asOf": "2026-08-01",
-    "asOfLabel": "Aug 2026",
-    "generatedAt": "2026-09-14T02:26:05.287Z",
+    "asOf": "2026-09-01",
+    "asOfLabel": "Sep 2026",
+    "generatedAt": "2026-10-20T04:25:05.703Z",
     "source": "BLS / FRED",
     "live": true,
     "crossCheck": {
-      "SAHMREALTIME": -0.07,
-      "SAHMCURRENT": -0.07
+      "SAHMREALTIME": 0,
+      "SAHMCURRENT": 0
     }
   },
   "regions": {
@@ -19,12 +19,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-08-01",
+      "asOf": "2026-09-01",
       "series": [
-        {
-          "t": "Aug 24",
-          "sahm": 0.53
-        },
         {
           "t": "Sep 24",
           "sahm": 0.43
@@ -116,6 +112,10 @@
         {
           "t": "Aug 26",
           "sahm": 0
+        },
+        {
+          "t": "Sep 26",
+          "sahm": 0
         }
       ]
     },
@@ -123,15 +123,11 @@
       "code": "AL",
       "slug": "al",
       "name": "Alabama",
-      "value": 0.5,
-      "prev": 0.3,
+      "value": 0.63,
+      "prev": 0.5,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.5
-        },
         {
           "t": "Aug 24",
           "sahm": 0.47
@@ -223,6 +219,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.5
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.63
         }
       ]
     },
@@ -233,12 +233,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.3
-        },
         {
           "t": "Aug 24",
           "sahm": 0.27
@@ -330,6 +326,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -338,14 +338,10 @@
       "slug": "az",
       "name": "Arizona",
       "value": 0.57,
-      "prev": 0.53,
+      "prev": 0.57,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.17
-        },
         {
           "t": "Aug 24",
           "sahm": 0.27
@@ -437,6 +433,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.57
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.57
         }
       ]
     },
@@ -444,15 +444,11 @@
       "code": "AR",
       "slug": "ar",
       "name": "Arkansas",
-      "value": 0.07,
-      "prev": 0.23,
+      "value": 0,
+      "prev": 0.07,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.27
-        },
         {
           "t": "Aug 24",
           "sahm": 0.17
@@ -544,6 +540,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.07
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -554,12 +554,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.6
-        },
         {
           "t": "Aug 24",
           "sahm": 0.57
@@ -651,6 +647,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -658,15 +658,11 @@
       "code": "CO",
       "slug": "co",
       "name": "Colorado",
-      "value": 0.1,
+      "value": 0.13,
       "prev": 0.1,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.87
-        },
         {
           "t": "Aug 24",
           "sahm": 0.87
@@ -758,6 +754,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.1
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.13
         }
       ]
     },
@@ -765,15 +765,11 @@
       "code": "CT",
       "slug": "ct",
       "name": "Connecticut",
-      "value": 1.3,
-      "prev": 1.27,
+      "value": 1.2,
+      "prev": 1.3,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.13
-        },
         {
           "t": "Aug 24",
           "sahm": 0.13
@@ -865,6 +861,10 @@
         {
           "t": "Jul 26",
           "sahm": 1.3
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 1.2
         }
       ]
     },
@@ -872,15 +872,11 @@
       "code": "DE",
       "slug": "de",
       "name": "Delaware",
-      "value": 0.27,
-      "prev": 0.53,
+      "value": 0,
+      "prev": 0.27,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.13
-        },
         {
           "t": "Aug 24",
           "sahm": 0.13
@@ -972,6 +968,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.27
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -979,15 +979,11 @@
       "code": "FL",
       "slug": "fl",
       "name": "Florida",
-      "value": 0.9,
-      "prev": 1.03,
+      "value": 0.7,
+      "prev": 0.9,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.43
-        },
         {
           "t": "Aug 24",
           "sahm": 0.43
@@ -1079,6 +1075,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.9
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.7
         }
       ]
     },
@@ -1086,15 +1086,11 @@
       "code": "GA",
       "slug": "ga",
       "name": "Georgia",
-      "value": 0.07,
-      "prev": 0.13,
+      "value": 0,
+      "prev": 0.07,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.27
-        },
         {
           "t": "Aug 24",
           "sahm": 0.3
@@ -1186,6 +1182,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.07
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -1193,15 +1193,11 @@
       "code": "HI",
       "slug": "hi",
       "name": "Hawaii",
-      "value": 0.47,
-      "prev": 0.37,
+      "value": 0.53,
+      "prev": 0.47,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0
-        },
         {
           "t": "Aug 24",
           "sahm": 0
@@ -1293,6 +1289,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.47
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.53
         }
       ]
     },
@@ -1300,15 +1300,11 @@
       "code": "ID",
       "slug": "id",
       "name": "Idaho",
-      "value": 0.07,
+      "value": 0.03,
       "prev": 0.07,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.4
-        },
         {
           "t": "Aug 24",
           "sahm": 0.33
@@ -1400,6 +1396,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.07
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.03
         }
       ]
     },
@@ -1407,15 +1407,11 @@
       "code": "IL",
       "slug": "il",
       "name": "Illinois",
-      "value": 0.73,
-      "prev": 0.8,
+      "value": 0.6,
+      "prev": 0.73,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.67
-        },
         {
           "t": "Aug 24",
           "sahm": 0.53
@@ -1507,6 +1503,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.73
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.6
         }
       ]
     },
@@ -1517,12 +1517,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.7
-        },
         {
           "t": "Aug 24",
           "sahm": 0.7
@@ -1613,6 +1609,10 @@
         },
         {
           "t": "Jul 26",
+          "sahm": 0
+        },
+        {
+          "t": "Aug 26",
           "sahm": 0
         }
       ]
@@ -1624,12 +1624,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.3
-        },
         {
           "t": "Aug 24",
           "sahm": 0.4
@@ -1721,6 +1717,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -1729,14 +1729,10 @@
       "slug": "ks",
       "name": "Kansas",
       "value": 0.1,
-      "prev": 0.13,
+      "prev": 0.1,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.77
-        },
         {
           "t": "Aug 24",
           "sahm": 0.8
@@ -1828,6 +1824,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.1
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.1
         }
       ]
     },
@@ -1835,15 +1835,11 @@
       "code": "KY",
       "slug": "ky",
       "name": "Kentucky",
-      "value": 0.4,
-      "prev": 0.27,
+      "value": 0.47,
+      "prev": 0.4,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.63
-        },
         {
           "t": "Aug 24",
           "sahm": 0.6
@@ -1935,6 +1931,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.4
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.47
         }
       ]
     },
@@ -1942,15 +1942,11 @@
       "code": "LA",
       "slug": "la",
       "name": "Louisiana",
-      "value": 0.23,
+      "value": 0.13,
       "prev": 0.23,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.6
-        },
         {
           "t": "Aug 24",
           "sahm": 0.6
@@ -2042,6 +2038,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.23
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.13
         }
       ]
     },
@@ -2049,15 +2049,11 @@
       "code": "ME",
       "slug": "me",
       "name": "Maine",
-      "value": 0,
+      "value": 0.03,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.3
-        },
         {
           "t": "Aug 24",
           "sahm": 0.33
@@ -2149,6 +2145,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.03
         }
       ]
     },
@@ -2156,15 +2156,11 @@
       "code": "MD",
       "slug": "md",
       "name": "Maryland",
-      "value": 0.2,
-      "prev": 0.4,
+      "value": 0,
+      "prev": 0.2,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 1.17
-        },
         {
           "t": "Aug 24",
           "sahm": 1.1
@@ -2256,6 +2252,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.2
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -2264,14 +2264,10 @@
       "slug": "ma",
       "name": "Massachusetts",
       "value": 0,
-      "prev": 0.13,
+      "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.67
-        },
         {
           "t": "Aug 24",
           "sahm": 0.63
@@ -2363,6 +2359,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -2370,15 +2370,11 @@
       "code": "MI",
       "slug": "mi",
       "name": "Michigan",
-      "value": 0.1,
-      "prev": 0.13,
+      "value": 0.07,
+      "prev": 0.1,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.77
-        },
         {
           "t": "Aug 24",
           "sahm": 0.87
@@ -2470,6 +2466,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.1
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.07
         }
       ]
     },
@@ -2477,15 +2477,11 @@
       "code": "MN",
       "slug": "mn",
       "name": "Minnesota",
-      "value": 0.6,
-      "prev": 0.73,
+      "value": 0.53,
+      "prev": 0.6,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.37
-        },
         {
           "t": "Aug 24",
           "sahm": 0.43
@@ -2577,6 +2573,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.6
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.53
         }
       ]
     },
@@ -2584,15 +2584,11 @@
       "code": "MS",
       "slug": "ms",
       "name": "Mississippi",
-      "value": 0.07,
-      "prev": 0.13,
+      "value": 0,
+      "prev": 0.07,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.23
-        },
         {
           "t": "Aug 24",
           "sahm": 0.37
@@ -2684,6 +2680,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.07
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -2694,12 +2694,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.6
-        },
         {
           "t": "Aug 24",
           "sahm": 0.57
@@ -2791,6 +2787,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -2798,15 +2798,11 @@
       "code": "MT",
       "slug": "mt",
       "name": "Montana",
-      "value": 0.07,
-      "prev": 0.23,
+      "value": 0,
+      "prev": 0.07,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.33
-        },
         {
           "t": "Aug 24",
           "sahm": 0.23
@@ -2898,6 +2894,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.07
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -2905,15 +2905,11 @@
       "code": "NE",
       "slug": "ne",
       "name": "Nebraska",
-      "value": 0.03,
-      "prev": 0.07,
+      "value": 0,
+      "prev": 0.03,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.43
-        },
         {
           "t": "Aug 24",
           "sahm": 0.4
@@ -3005,6 +3001,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.03
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3015,12 +3015,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.37
-        },
         {
           "t": "Aug 24",
           "sahm": 0.37
@@ -3112,6 +3108,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3122,12 +3122,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.3
-        },
         {
           "t": "Aug 24",
           "sahm": 0.3
@@ -3219,6 +3215,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3229,12 +3229,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.23
-        },
         {
           "t": "Aug 24",
           "sahm": 0.2
@@ -3326,6 +3322,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3333,15 +3333,11 @@
       "code": "NM",
       "slug": "nm",
       "name": "New Mexico",
-      "value": 0.83,
-      "prev": 0.87,
+      "value": 0.73,
+      "prev": 0.83,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.53
-        },
         {
           "t": "Aug 24",
           "sahm": 0.57
@@ -3433,6 +3429,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.83
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.73
         }
       ]
     },
@@ -3440,15 +3440,11 @@
       "code": "NY",
       "slug": "ny",
       "name": "New York",
-      "value": 0.23,
-      "prev": 0.4,
+      "value": 0.03,
+      "prev": 0.23,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.23
-        },
         {
           "t": "Aug 24",
           "sahm": 0.17
@@ -3540,6 +3536,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.23
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.03
         }
       ]
     },
@@ -3550,12 +3550,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.2
-        },
         {
           "t": "Aug 24",
           "sahm": 0.2
@@ -3647,6 +3643,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3657,12 +3657,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.43
-        },
         {
           "t": "Aug 24",
           "sahm": 0.43
@@ -3754,6 +3750,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3764,12 +3764,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.73
-        },
         {
           "t": "Aug 24",
           "sahm": 0.67
@@ -3861,6 +3857,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -3868,15 +3868,11 @@
       "code": "OK",
       "slug": "ok",
       "name": "Oklahoma",
-      "value": 1,
-      "prev": 0.97,
+      "value": 0.97,
+      "prev": 1,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.1
-        },
         {
           "t": "Aug 24",
           "sahm": 0
@@ -3968,6 +3964,10 @@
         {
           "t": "Jul 26",
           "sahm": 1
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.97
         }
       ]
     },
@@ -3976,14 +3976,10 @@
       "slug": "or",
       "name": "Oregon",
       "value": 0,
-      "prev": 0.03,
+      "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.47
-        },
         {
           "t": "Aug 24",
           "sahm": 0.43
@@ -4075,6 +4071,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4085,12 +4085,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.23
-        },
         {
           "t": "Aug 24",
           "sahm": 0.23
@@ -4182,6 +4178,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4190,14 +4190,10 @@
       "slug": "ri",
       "name": "Rhode Island",
       "value": 0,
-      "prev": 0.03,
+      "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 1.53
-        },
         {
           "t": "Aug 24",
           "sahm": 1.47
@@ -4289,6 +4285,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4296,15 +4296,11 @@
       "code": "SC",
       "slug": "sc",
       "name": "South Carolina",
-      "value": 0.03,
-      "prev": 0.3,
+      "value": 0,
+      "prev": 0.03,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 1.47
-        },
         {
           "t": "Aug 24",
           "sahm": 1.57
@@ -4396,6 +4392,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.03
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4403,15 +4403,11 @@
       "code": "SD",
       "slug": "sd",
       "name": "South Dakota",
-      "value": 0.03,
-      "prev": 0.1,
+      "value": 0,
+      "prev": 0.03,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.07
-        },
         {
           "t": "Aug 24",
           "sahm": 0.1
@@ -4503,6 +4499,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.03
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4511,14 +4511,10 @@
       "slug": "tn",
       "name": "Tennessee",
       "value": 0,
-      "prev": 0.07,
+      "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.13
-        },
         {
           "t": "Aug 24",
           "sahm": 0.2
@@ -4609,6 +4605,10 @@
         },
         {
           "t": "Jul 26",
+          "sahm": 0
+        },
+        {
+          "t": "Aug 26",
           "sahm": 0
         }
       ]
@@ -4618,14 +4618,10 @@
       "slug": "tx",
       "name": "Texas",
       "value": 0.27,
-      "prev": 0.23,
+      "prev": 0.27,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.13
-        },
         {
           "t": "Aug 24",
           "sahm": 0.17
@@ -4717,6 +4713,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.27
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.27
         }
       ]
     },
@@ -4724,15 +4724,11 @@
       "code": "UT",
       "slug": "ut",
       "name": "Utah",
-      "value": 0.13,
-      "prev": 0.23,
+      "value": 0.03,
+      "prev": 0.13,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.63
-        },
         {
           "t": "Aug 24",
           "sahm": 0.6
@@ -4824,6 +4820,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.13
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.03
         }
       ]
     },
@@ -4834,12 +4834,8 @@
       "value": 0,
       "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.4
-        },
         {
           "t": "Aug 24",
           "sahm": 0.4
@@ -4931,6 +4927,10 @@
         {
           "t": "Jul 26",
           "sahm": 0
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -4938,15 +4938,11 @@
       "code": "VA",
       "slug": "va",
       "name": "Virginia",
-      "value": 0.5,
-      "prev": 0.53,
+      "value": 0.43,
+      "prev": 0.5,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.3
-        },
         {
           "t": "Aug 24",
           "sahm": 0.3
@@ -5038,6 +5034,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.5
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.43
         }
       ]
     },
@@ -5045,15 +5045,11 @@
       "code": "WA",
       "slug": "wa",
       "name": "Washington",
-      "value": 0.6,
-      "prev": 0.7,
+      "value": 0.47,
+      "prev": 0.6,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.47
-        },
         {
           "t": "Aug 24",
           "sahm": 0.3
@@ -5145,6 +5141,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.6
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.47
         }
       ]
     },
@@ -5152,15 +5152,11 @@
       "code": "WV",
       "slug": "wv",
       "name": "West Virginia",
-      "value": 0.13,
-      "prev": 0.33,
+      "value": 0,
+      "prev": 0.13,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.2
-        },
         {
           "t": "Aug 24",
           "sahm": 0.1
@@ -5252,6 +5248,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.13
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0
         }
       ]
     },
@@ -5259,15 +5259,11 @@
       "code": "WI",
       "slug": "wi",
       "name": "Wisconsin",
-      "value": 0.27,
-      "prev": 0.33,
+      "value": 0.2,
+      "prev": 0.27,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.1
-        },
         {
           "t": "Aug 24",
           "sahm": 0.1
@@ -5359,6 +5355,10 @@
         {
           "t": "Jul 26",
           "sahm": 0.27
+        },
+        {
+          "t": "Aug 26",
+          "sahm": 0.2
         }
       ]
     },
@@ -5367,14 +5367,10 @@
       "slug": "wy",
       "name": "Wyoming",
       "value": 0,
-      "prev": 0.17,
+      "prev": 0,
       "computed": true,
-      "asOf": "2026-07-01",
+      "asOf": "2026-08-01",
       "series": [
-        {
-          "t": "Jul 24",
-          "sahm": 0.33
-        },
         {
           "t": "Aug 24",
           "sahm": 0.37
@@ -5465,6 +5461,10 @@
         },
         {
           "t": "Jul 26",
+          "sahm": 0
+        },
+        {
+          "t": "Aug 26",
           "sahm": 0
         }
       ]
