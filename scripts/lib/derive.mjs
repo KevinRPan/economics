@@ -35,6 +35,24 @@ export function mortgageMonthly(principal, annualRatePct, months = 360) {
   return (principal * r) / (1 - Math.pow(1 + r, -months));
 }
 
+// Monthly difference (v_t - v_{t-1})
+export function diffSeries(monthly) {
+  const out = [];
+  for (let i = 1; i < monthly.length; i++) {
+    out.push({ date: monthly[i].date, value: monthly[i].value - monthly[i - 1].value });
+  }
+  return out;
+}
+
+// 3-month moving average of monthly change: (v_t - v_{t-3}) / 3
+export function ma3OfChange(monthly) {
+  const out = [];
+  for (let i = 3; i < monthly.length; i++) {
+    out.push({ date: monthly[i].date, value: (monthly[i].value - monthly[i - 3].value) / 3 });
+  }
+  return out;
+}
+
 // Percentile rank (0–100, ties count half) of `v` within `values`.
 export function percentileRank(values, v) {
   if (!values.length) return null;

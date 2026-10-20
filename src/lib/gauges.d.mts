@@ -6,6 +6,16 @@ export const C: {
   backdrop: string;
 };
 
+export type Topic = "jobs" | "prices" | "housing" | "growth" | "fed" | "households" | "markets";
+
+export interface TopicDef {
+  id: Topic;
+  label: string;
+}
+
+export const TOPICS: readonly TopicDef[];
+export const TOPIC_LABELS: Record<Topic, string>;
+
 export interface Band {
   upTo: number;
   key: string;
@@ -17,6 +27,7 @@ export interface Gauge {
   id: string;
   slug: string;
   group: "economy" | "markets";
+  topic: Topic;
   eyebrow: string;
   headline: string;
   short: string;

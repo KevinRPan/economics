@@ -1,81 +1,49 @@
 /* ───────────────────────────────────────────────────────────────────────────
    Build-time data layer for the gauge cards (markets + economy).
 
-   With FRED_API_KEY set, this fetches the FRED series behind each gauge over
-   its FULL history, resamples to a monthly grid, derives current value, prior
+   With FRED observations reachable (or FRED_API_KEY set), this fetches the
+   series behind each gauge over its FULL history, derives current value, prior
    value, 24-month history, and a full-history percentile rank, and writes
-   src/data/markets.json. The browser never calls FRED and never sees the key —
-   same contract as the recession card.
+   src/data/markets.json. The browser never calls FRED and never sees a key.
 
-   Without a key, it writes a reproducible SEED (illustrative recent values so
-   the site builds locally and in PRs). Each gauge is labelled honestly in the
-   card + OG image as `computed` vs `illustrative`; seed readings carry no
-   percentile.
+   Without network / key, it writes a reproducible SEED (illustrative recent
+   values so the site builds locally and in PRs). Each gauge is labelled
+   honestly in the card + OG image as `computed` vs `illustrative`; seed
+   readings carry no percentile.
 
-   Run: FRED_API_KEY=… node scripts/fetch-markets.mjs
+   Run: node scripts/fetch-markets.mjs
 ─────────────────────────────────────────────────────────────────────────── */
 
 import { writeFile, mkdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { dirname, resolve } from "node:path";
-import { toMonthly, forwardFill, monthLabel, monthKey } from "./lib/series.mjs";
-import { yoyPct, ratioSeries, mortgageMonthly, percentileRank } from "./lib/derive.mjs";
-import { GAUGES, pctOf } from "../src/lib/gauges.mjs";
+import { monthLabel } from "./lib/series.mjs";
+import { percentileRank } from "./lib/derive.mjs";
+import { GAUGES } from "../src/lib/gauges.mjs";
+import { computeAllIndicators, SEED_READINGS, getDecimals } from "./lib/indicators.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "../src/data/markets.json");
-const API_KEY = process.env.FRED_API_KEY;
-const FRED = "https://api.stlouisfed.org/fred/series/observations";
 
 const WINDOW = 24; // months of history kept for the deep-dive chart
 
-async function fredObservations(seriesId) {
-  // Full history — the percentile context needs every reading, not just 2019+.
-  if (API_KEY) {
-    try {
-      const url = `${FRED}?series_id=${seriesId}&api_key=${API_KEY}&file_type=json`;
-      const res = await fetch(url);
-      if (res.ok) {
-        const json = await res.json();
-        const obs = (json.observations || [])
-          .filter((o) => o.value !== ".")
-          .map((o) => ({ date: o.date, value: +o.value }));
-        if (obs.length > 0) return obs;
-      }
-    } catch (err) {
-      // Fall through to public CSV
-    }
-  }
-
-  // Fallback to FRED's public CSV endpoint
-  const csvUrl = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${encodeURIComponent(seriesId)}`;
-  const res = await fetch(csvUrl, {
-    headers: { "User-Agent": "econ.kpan.dev/1.0" },
-  });
-  if (!res.ok) throw new Error(`FRED CSV ${seriesId} → ${res.status} ${res.statusText}`);
-  const text = await res.text();
-  const lines = text.trim().split("\n");
-  const obs = [];
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim();
-    if (!line) continue;
-    const [date, valStr] = line.split(",");
-    if (valStr && valStr !== "." && Number.isFinite(+valStr)) {
-      obs.push({ date, value: +valStr });
-    }
-  }
-  if (obs.length === 0) throw new Error(`FRED CSV ${seriesId} yielded 0 observations`);
-  return obs;
-}
-
 // Turn a monthly [{date, value}] series into a gauge reading record.
-function readingFrom(gauge, monthly, computed) {
-  const pts = monthly.map((o) => ({ t: monthLabel(o.date), v: round(gauge, o.value), date: o.date }));
+function readingFrom(gaugeOrId, monthly, computed) {
+  const id = typeof gaugeOrId === "string" ? gaugeOrId : gaugeOrId?.id;
+  const gauge = (typeof gaugeOrId === "object" && gaugeOrId !== null) ? gaugeOrId : (GAUGES[id] || { id, slug: id, decimals: getDecimals(id) });
+  const decimals = gauge.decimals ?? getDecimals(id) ?? 2;
+
+  const round = (v) => {
+    const p = 10 ** decimals;
+    return Math.round(v * p) / p;
+  };
+
+  const pts = monthly.map((o) => ({ t: monthLabel(o.date), v: round(o.value), date: o.date }));
   const last = pts[pts.length - 1];
   const prev = pts[pts.length - 2] || last;
   const reading = {
-    id: gauge.id,
-    slug: gauge.slug,
+    id: gauge.id ?? id,
+    slug: gauge.slug ?? id,
     value: last.v,
     prev: prev.v,
     computed,
@@ -90,134 +58,30 @@ function readingFrom(gauge, monthly, computed) {
   return reading;
 }
 
-function round(gauge, v) {
-  const p = 10 ** gauge.decimals;
-  return Math.round(v * p) / p;
-}
-
 // ── live mode ─────────────────────────────────────────────────────────────--
 async function buildLive() {
-  const monthly = {}; // gauge id → full-history monthly [{date, value}]
-
-  // Simple level gauges — one FRED series each, downsampled to monthly.
-  const SIMPLE = [
-    ["vix", "VIXCLS"],
-    ["credit", "BAMLH0A0HYM2"],
-    ["curve", "T10Y3M"],
-    ["stress", "DRCCLACBS"],
-  ];
-  for (const [id, series] of SIMPLE) {
-    try {
-      monthly[id] = toMonthly(await fredObservations(series));
-    } catch (err) {
-      console.error(`  ✗ ${id} (${series}): ${err.message}`);
-    }
-  }
-
-  // CPI feeds both the inflation gauge (YoY) and the real-wage deflator.
-  let cpi = null;
-  try {
-    cpi = toMonthly(await fredObservations("CPIAUCSL"));
-    monthly.inflation = yoyPct(cpi);
-  } catch (err) {
-    console.error(`  ✗ inflation (CPIAUCSL): ${err.message}`);
-  }
-
-  // Real wages: nominal hourly earnings ÷ CPI, year over year.
-  if (cpi) {
-    try {
-      const ahe = toMonthly(await fredObservations("AHETPI"));
-      monthly.wages = yoyPct(ratioSeries(ahe, cpi));
-    } catch (err) {
-      console.error(`  ✗ wages (AHETPI ÷ CPIAUCSL): ${err.message}`);
-    }
-  }
-
-  // Buffett: total US corporate equities (Fed Z.1) ÷ GDP, as a percent.
-  // NCBEILQ027S is in $ millions and GDP in $ billions, so scale the numerator
-  // down by 1000 before the ratio. (The Wilshire 5000 series this used to read,
-  // WILL5000PRFC, was pulled from FRED on 2024-06-03, so we use the maintained
-  // Z.1 corporate-equities measure instead.)
-  try {
-    const equities = toMonthly(await fredObservations("NCBEILQ027S")); // quarterly, $ millions
-    const gdp = toMonthly(await fredObservations("GDP")); // quarterly, $ billions
-    const gdpByMonth = forwardFill(equities, gdp);
-    monthly.buffett = equities
-      .map((e) => {
-        const g = gdpByMonth.get(monthKey(e.date));
-        return g ? { date: e.date, value: (e.value / 1000 / g) * 100 } : null;
-      })
-      .filter(Boolean);
-  } catch (err) {
-    console.error(`  ✗ buffett (NCBEILQ027S ÷ GDP): ${err.message}`);
-  }
-
-  // Housing affordability: 30-yr payment on the median home (20% down) as a
-  // share of median household income. Weekly mortgage rate sets the monthly
-  // grid; quarterly price and annual income are forward-filled onto it.
-  try {
-    const rate = toMonthly(await fredObservations("MORTGAGE30US")); // weekly, %
-    const price = toMonthly(await fredObservations("MSPUS")); // quarterly, $
-    const income = toMonthly(await fredObservations("MEHOINUSA646N")); // annual, $
-    const priceBy = forwardFill(rate, price);
-    const incomeBy = forwardFill(rate, income);
-    monthly.housing = rate
-      .map((o) => {
-        const p = priceBy.get(monthKey(o.date));
-        const inc = incomeBy.get(monthKey(o.date));
-        if (!p || !inc) return null;
-        const payment = mortgageMonthly(p * 0.8, o.value);
-        return { date: o.date, value: (payment / (inc / 12)) * 100 };
-      })
-      .filter(Boolean);
-  } catch (err) {
-    console.error(`  ✗ housing (MSPUS · MORTGAGE30US · MEHOINUSA646N): ${err.message}`);
-  }
-
-  // Market mood: equal-weight composite of the three market gauges, each
-  // scored 0–100 toward greed on its own card scale (VIX + spreads inverted:
-  // low fear and tight credit read as greed). Monthly grid = VIX; the
-  // quarterly Buffett ratio is forward-filled onto it.
-  if (monthly.buffett && monthly.vix && monthly.credit) {
-    const buffettBy = forwardFill(monthly.vix, monthly.buffett);
-    const creditBy = forwardFill(monthly.vix, monthly.credit);
-    monthly.mood = monthly.vix
-      .map((o) => {
-        const k = monthKey(o.date);
-        const b = buffettBy.get(k);
-        const c = creditBy.get(k);
-        if (b == null || c == null) return null;
-        const score =
-          (pctOf(GAUGES.buffett, b) + (100 - pctOf(GAUGES.vix, o.value)) + (100 - pctOf(GAUGES.credit, c))) / 3;
-        return { date: o.date, value: score };
-      })
-      .filter(Boolean);
-  } else {
-    console.error("  ✗ mood: needs buffett + vix + credit — skipped");
-  }
-
+  const { monthly } = await computeAllIndicators();
   const gauges = {};
-  for (const [id, series] of Object.entries(monthly)) {
-    if (series?.length) gauges[id] = readingFrom(GAUGES[id], series, true);
+
+  for (const gauge of Object.values(GAUGES)) {
+    const series = monthly[gauge.id];
+    if (series?.length) {
+      gauges[gauge.id] = readingFrom(gauge, series, true);
+    } else {
+      console.warn(`  ⚠ missing series for gauge ${gauge.id}`);
+    }
   }
-  const asOf = gauges.vix?.asOf ?? gauges.credit?.asOf ?? gauges.curve?.asOf ?? gauges.buffett?.asOf;
+
+  // Find latest asOf among all gauges
+  let asOf = "2000-01-01";
+  for (const g of Object.values(gauges)) {
+    if (g.asOf && g.asOf > asOf) asOf = g.asOf;
+  }
+
   return { gauges, asOf, live: true };
 }
 
-// ── seed mode (no key) ───────────────────────────────────────────────────────
-// Illustrative recent readings + a gentle 24-pt shape so the chart renders.
-const SEED = {
-  buffett: { value: 225, prev: 221, start: 175 },
-  vix: { value: 16.5, prev: 15.2, start: 19 },
-  credit: { value: 3.2, prev: 3.05, start: 4.6 },
-  curve: { value: 0.55, prev: 0.4, start: -1.1 },
-  inflation: { value: 2.7, prev: 2.9, start: 3.7 },
-  wages: { value: 1.0, prev: 0.8, start: -0.4 },
-  housing: { value: 31.8, prev: 31.9, start: 29.2 },
-  stress: { value: 3.2, prev: 3.1, start: 2.6 },
-  mood: { value: 72, prev: 69, start: 48 },
-};
-
+// ── seed mode (no network) ──────────────────────────────────────────────────
 function seedDates() {
   // last 24 months ending at the current month
   const now = new Date();
@@ -234,7 +98,8 @@ function buildSeed() {
   const n = dates.length;
   const gauges = {};
   for (const gauge of Object.values(GAUGES)) {
-    const { value, prev, start } = SEED[gauge.id];
+    const seed = SEED_READINGS[gauge.id] || { value: 0, prev: 0, start: 0 };
+    const { value, prev, start } = seed;
     const monthly = dates.map((date, i) => {
       let v;
       if (i === n - 1) v = value;
@@ -257,7 +122,7 @@ function asOfLabel(iso) {
 async function main() {
   let result;
   try {
-    console.log("▶ markets data — attempting live fetch from FRED");
+    console.log("▶ markets data — attempting live fetch from FRED & Shiller");
     result = await buildLive();
     console.log("  live fetch succeeded!");
   } catch (err) {
@@ -271,7 +136,7 @@ async function main() {
       asOf,
       asOfLabel: asOfLabel(asOf),
       generatedAt: new Date().toISOString(),
-      source: "FRED",
+      source: "FRED / Shiller",
       live,
     },
     gauges,

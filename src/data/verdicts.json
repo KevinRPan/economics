@@ -1,20 +1,20 @@
 {
-  "updated": "2026-09-14T02:26:05.944Z",
+  "updated": "2026-10-20T04:25:07.820Z",
   "live": true,
   "cards": {
     "recession": {
       "key": "clear",
       "label": "Clear",
       "value": 0,
-      "asOf": "2026-08-01",
+      "asOf": "2026-09-01",
       "since": "2026-03-01",
       "history": []
     },
     "curve": {
       "key": "normal",
       "label": "Normal",
-      "value": 0.89,
-      "asOf": "2026-09-11",
+      "value": 0.88,
+      "asOf": "2026-10-19",
       "since": "2026-09-11",
       "history": [
         {
@@ -30,8 +30,8 @@
     "inflation": {
       "key": "elevated",
       "label": "Elevated",
-      "value": 3.4,
-      "asOf": "2026-08-01",
+      "value": 3.7,
+      "asOf": "2026-09-01",
       "since": "2026-05-01",
       "history": [
         {
@@ -45,11 +45,11 @@
       ]
     },
     "wages": {
-      "key": "holding",
-      "label": "Holding even",
-      "value": 0,
-      "asOf": "2026-08-01",
-      "since": "2026-08-01",
+      "key": "slipping",
+      "label": "Slipping",
+      "value": -0.4,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
       "history": [
         {
           "date": "2026-05-01",
@@ -66,14 +66,22 @@
           "to": "holding",
           "label": "Holding even",
           "value": 0
+        },
+        {
+          "date": "2026-09-01",
+          "from": "holding",
+          "fromLabel": "Holding even",
+          "to": "slipping",
+          "label": "Slipping",
+          "value": -0.4
         }
       ]
     },
     "housing": {
       "key": "burdened",
       "label": "Cost-burdened",
-      "value": 30.6,
-      "asOf": "2026-09-10",
+      "value": 31.2,
+      "asOf": "2026-10-15",
       "since": "2026-09-10",
       "history": [
         {
@@ -114,8 +122,8 @@
     "mood": {
       "key": "mania",
       "label": "Mania",
-      "value": 88,
-      "asOf": "2026-09-10",
+      "value": 84,
+      "asOf": "2026-10-16",
       "since": "2026-07-01",
       "history": [
         {
@@ -131,7 +139,7 @@
     "buffett": {
       "key": "mania",
       "label": "Mania",
-      "value": 256,
+      "value": 255,
       "asOf": "2026-04-01",
       "since": "2026-04-01",
       "history": [
@@ -156,8 +164,8 @@
     "vix": {
       "key": "normal",
       "label": "Normal",
-      "value": 17.8,
-      "asOf": "2026-09-10",
+      "value": 20,
+      "asOf": "2026-10-16",
       "since": "2026-09-10",
       "history": [
         {
@@ -171,11 +179,11 @@
       ]
     },
     "credit": {
-      "key": "reaching",
-      "label": "Reaching for yield",
-      "value": 2.7,
-      "asOf": "2026-09-10",
-      "since": "2026-07-02",
+      "key": "riskon",
+      "label": "Risk-on",
+      "value": 3.31,
+      "asOf": "2026-10-16",
+      "since": "2026-10-16",
       "history": [
         {
           "date": "2026-07-02",
@@ -184,8 +192,160 @@
           "to": "reaching",
           "label": "Reaching for yield",
           "value": 2.75
+        },
+        {
+          "date": "2026-10-16",
+          "from": "reaching",
+          "fromLabel": "Reaching for yield",
+          "to": "riskon",
+          "label": "Risk-on",
+          "value": 3.31
         }
       ]
+    },
+    "claims": {
+      "key": "very_low",
+      "label": "Very low",
+      "value": 199,
+      "asOf": "2026-10-10",
+      "since": "2026-10-10",
+      "history": []
+    },
+    "payrolls": {
+      "key": "stalling",
+      "label": "Stalling",
+      "value": 51,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
+      "history": []
+    },
+    "openings": {
+      "key": "balanced",
+      "label": "Balanced",
+      "value": 1.01,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "quits": {
+      "key": "cautious",
+      "label": "Cautious",
+      "value": 1.9,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "gdp": {
+      "key": "moderate",
+      "label": "Moderate",
+      "value": 2.2,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
+      "history": []
+    },
+    "indpro": {
+      "key": "modest",
+      "label": "Modest",
+      "value": 2.2,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
+      "history": []
+    },
+    "retail": {
+      "key": "strong",
+      "label": "Strong",
+      "value": 2.5,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
+      "history": []
+    },
+    "permits": {
+      "key": "normal",
+      "label": "Normal",
+      "value": 1403,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "fedfunds": {
+      "key": "restrictive",
+      "label": "Restrictive",
+      "value": 3.75,
+      "asOf": "2026-09-01",
+      "since": "2026-09-01",
+      "history": []
+    },
+    "corepce": {
+      "key": "elevated",
+      "label": "Elevated",
+      "value": 3,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "breakeven": {
+      "key": "normal",
+      "label": "Normal",
+      "value": 2.35,
+      "asOf": "2026-10-19",
+      "since": "2026-10-19",
+      "history": []
+    },
+    "gas": {
+      "key": "painful",
+      "label": "Painful",
+      "value": 4.34,
+      "asOf": "2026-10-12",
+      "since": "2026-10-12",
+      "history": []
+    },
+    "oil": {
+      "key": "spike",
+      "label": "Spike",
+      "value": 102,
+      "asOf": "2026-10-14",
+      "since": "2026-10-14",
+      "history": []
+    },
+    "dollar": {
+      "key": "stable",
+      "label": "Stable",
+      "value": 0,
+      "asOf": "2026-10-16",
+      "since": "2026-10-16",
+      "history": []
+    },
+    "savings": {
+      "key": "low",
+      "label": "Thin cushion",
+      "value": 4.1,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "sentiment": {
+      "key": "grim",
+      "label": "Grim",
+      "value": 52,
+      "asOf": "2026-08-01",
+      "since": "2026-08-01",
+      "history": []
+    },
+    "nfci": {
+      "key": "easy",
+      "label": "Accommodative",
+      "value": -0.5,
+      "asOf": "2026-10-09",
+      "since": "2026-10-09",
+      "history": []
+    },
+    "cape": {
+      "key": "expensive",
+      "label": "Expensive",
+      "value": 30.8,
+      "asOf": "2023-09-01",
+      "since": "2023-09-01",
+      "history": []
     }
   }
 }

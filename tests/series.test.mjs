@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { monthKey, monthLabel, toMonthly, forwardFill } from "../scripts/lib/series.mjs";
+import { monthKey, monthLabel, toMonthly, toMonthlyAvg, forwardFill } from "../scripts/lib/series.mjs";
 
 describe("monthKey / monthLabel", () => {
   it("keys by YYYY-MM", () => {
@@ -30,6 +30,23 @@ describe("toMonthly", () => {
       { date: "2026-02-28", value: 2 },
     ];
     expect(toMonthly(obs).map((o) => o.value)).toEqual([1, 2, 3]);
+  });
+});
+
+describe("toMonthlyAvg", () => {
+  it("averages observations within each month", () => {
+    const obs = [
+      { date: "2026-01-07", value: 10 },
+      { date: "2026-01-14", value: 20 },
+      { date: "2026-01-21", value: 30 },
+      { date: "2026-02-04", value: 40 },
+    ];
+    const res = toMonthlyAvg(obs);
+    expect(res).toHaveLength(2);
+    expect(res[0].date).toBe("2026-01-21");
+    expect(res[0].value).toBe(20);
+    expect(res[1].date).toBe("2026-02-04");
+    expect(res[1].value).toBe(40);
   });
 });
 

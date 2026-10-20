@@ -24,6 +24,24 @@ export function toMonthly(obs) {
   return [...byMonth.values()].sort((a, b) => a.date.localeCompare(b.date));
 }
 
+// Average [{date, value}] within each month to produce one point per month.
+export function toMonthlyAvg(obs) {
+  const byMonth = new Map();
+  for (const o of obs) {
+    const k = monthKey(o.date);
+    if (!byMonth.has(k)) byMonth.set(k, { sum: 0, count: 0, lastDate: o.date });
+    const m = byMonth.get(k);
+    m.sum += o.value;
+    m.count++;
+    m.lastDate = o.date;
+  }
+  const out = [];
+  for (const [, { sum, count, lastDate }] of byMonth.entries()) {
+    out.push({ date: lastDate, value: sum / count });
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date));
+}
+
 // Forward-fill a (sparse) monthly series onto the months present in `grid`.
 // Returns a Map<monthKey, value> carrying the most recent prior value forward.
 export function forwardFill(grid, monthly) {

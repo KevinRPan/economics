@@ -1,0 +1,136 @@
+---
+// /dashboard — The user's personal economy desk.
+// Hydrates a React island (DashboardApp) with build-time data.
+import "../styles/globals.css";
+import marketsData from "../data/markets.json";
+import recessionData from "../data/recession.json";
+import verdictsData from "../data/verdicts.json";
+import DashboardApp from "../components/dashboard/DashboardApp";
+import type { MarketsData, RecessionData } from "../lib/types";
+import type { HistoriesData, StreamItem } from "../lib/dashboard-types";
+import { C } from "../lib/gauges.mjs";
+
+const markets = marketsData as MarketsData;
+const recession = recessionData as RecessionData;
+const verdicts = verdictsData as any;
+
+// Safely load histories.json (owned by A1, may still be building)
+let histories: HistoriesData;
+try {
+  const historiesModules = import.meta.glob("../data/histories.json", { eager: true });
+  const key = "../data/histories.json";
+  if (historiesModules[key]) {
+    histories = ((historiesModules[key] as any).default ?? historiesModules[key]) as HistoriesData;
+  }
+} catch {
+  // Safe fallback
+}
+
+// Fallback matching HistoriesData shape if histories.json isn't present yet
+// @ts-ignore
+if (!histories) {
+  histories = {
+    meta: { generatedAt: new Date().toISOString(), live: false, through: "2026-09" },
+    indicators: {},
+    targets: {
+      recession: { id: "recession", label: "Recessions", short: "recession", description: "NBER recession months", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+      bear: { id: "bear", label: "Stock crashes", short: "bear", description: "S&P 500 drop >=20%", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+      joblessjump: { id: "joblessjump", label: "Unemployment jumps", short: "jobless", description: "UNRATE rises >=1.0 pt", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+      inflation: { id: "inflation", label: "Inflation spikes", short: "inflation", description: "CPI YoY > 5%", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+      housing: { id: "housing", label: "Home prices falling", short: "housing", description: "Case-Shiller negative YoY", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+      fedcuts: { id: "fedcuts", label: "Fed starts cutting", short: "fedcuts", description: "Fed funds falls >=0.5 pt", coverage: { start: "1970-01", end: "2026-09" }, events: [] },
+    },
+  };
+}
+
+// Safely load buildStream from src/lib/stream.mjs (owned by D, may still be building)
+let streamItems: StreamItem[] = [];
+try {
+  const streamModules = import.meta.glob("../lib/stream.mjs", { eager: true });
+  const streamKey = "../lib/stream.mjs";
+  if (streamModules[streamKey]) {
+    const mod = streamModules[streamKey] as any;
+    const buildStream = mod.buildStream ?? mod.default?.buildStream;
+    if (typeof buildStream === "function") {
+      let calendar = null;
+      try {
+        const calModules = import.meta.glob("../data/calendar.json", { eager: true });
+        const calKey = "../data/calendar.json";
+        if (calModules[calKey]) {
+          calendar = (calModules[calKey] as any).default ?? calModules[calKey];
+        }
+      } catch {
+        calendar = null;
+      }
+      streamItems = buildStream({
+        markets,
+        verdicts,
+        calendar,
+        histories,
+        now: new Date().toISOString(),
+      }) ?? [];
+    }
+  }
+} catch {
+  streamItems = [];
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Economy Desk — Customizable Dashboard & Signal Lab — econ.kpan.dev</title>
+    <meta
+      name="description"
+      content="Your personal macro monitor: pick the indicators you care about, follow live band changes, and test cross-signals against history."
+    />
+    <link rel="canonical" href="https://econ.kpan.dev/dashboard" />
+    <link rel="alternate" type="application/rss+xml" title="econ.kpan.dev — verdict changes" href="/rss.xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="econ.kpan.dev" />
+    <meta property="og:title" content="Your Economy Desk — econ.kpan.dev" />
+    <meta
+      property="og:description"
+      content="Your personal macro monitor: pick the indicators you care about, follow live band changes, and test cross-signals against history."
+    />
+    <meta property="og:url" content="https://econ.kpan.dev/dashboard" />
+    <meta property="og:image" content="https://econ.kpan.dev/og/recession-national.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Your Economy Desk — econ.kpan.dev" />
+    <meta
+      name="twitter:description"
+      content="Your personal macro monitor: pick the indicators you care about, follow live band changes, and test cross-signals against history."
+    />
+    <meta name="twitter:image" content="https://econ.kpan.dev/og/recession-national.png" />
+
+    <meta name="theme-color" content="#081113" />
+  </head>
+  <body style={`background:${C.backdrop}; color:${C.text}; margin:0; min-height:100vh;`}>
+    <DashboardApp
+      client:load
+      markets={markets}
+      recession={recession}
+      verdicts={verdicts}
+      histories={histories}
+      streamItems={streamItems}
+    />
+    <footer
+      style={`text-align:center; padding:24px 20px 36px; font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:.04em; color:${C.faint}; border-top:1px solid ${C.line};`}
+    >
+      <a href="/rss.xml" style={`color:${C.muted}; text-decoration:none;`}>RSS</a>
+      <span style="margin:0 8px;">·</span>
+      <a href="/" style={`color:${C.muted}; text-decoration:none;`}>All Cards Feed</a>
+      <span style="margin:0 8px;">·</span>
+      <a href="https://kpan.dev" style={`color:${C.muted}; text-decoration:none;`}>by Kevin Pan ↗ kpan.dev</a>
+    </footer>
+  </body>
+</html>

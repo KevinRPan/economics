@@ -1,0 +1,2140 @@
+{
+  "updated": "2026-10-20T04:25:07.484Z",
+  "source": "bls+computed",
+  "count": 174,
+  "releases": [
+    {
+      "id": "gas-2026-06-22",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-06-22",
+      "time": "16:30 ET",
+      "period": "Week of 2026-06-22",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-06-25",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-06-25",
+      "time": "08:30 ET",
+      "period": "Week of 2026-06-25",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-06-25",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-06-25",
+      "time": "08:30 ET",
+      "period": "Week of 2026-06-25",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "gas-2026-06-29",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-06-29",
+      "time": "16:30 ET",
+      "period": "Week of 2026-06-29",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-07-02",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-07-02",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-02",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-07-02",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-07-02",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-02",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-07-03",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-07-03",
+      "time": "08:30 ET",
+      "period": "Jun 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-07-06",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-07-06",
+      "time": "16:30 ET",
+      "period": "Week of 2026-07-06",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-07-07",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-07-07",
+      "time": "10:00 ET",
+      "period": "May 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2026-07-09",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-07-09",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-09",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-07-09",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-07-09",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-09",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-prelim-2026-07-10",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-07-10",
+      "time": "10:00 ET",
+      "period": "Jul 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "cpi-2026-07-13",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-07-13",
+      "time": "08:30 ET",
+      "period": "Jun 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "gas-2026-07-13",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-07-13",
+      "time": "16:30 ET",
+      "period": "Week of 2026-07-13",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "retail-2026-07-15",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-07-15",
+      "time": "08:30 ET",
+      "period": "Jun 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "nfci-2026-07-16",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-07-16",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-16",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "indpro-2026-07-16",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-07-16",
+      "time": "09:15 ET",
+      "period": "Jun 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "claims-2026-07-16",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-07-16",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-16",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "permits-2026-07-17",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-07-17",
+      "time": "08:30 ET",
+      "period": "Jun 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "gas-2026-07-20",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-07-20",
+      "time": "16:30 ET",
+      "period": "Week of 2026-07-20",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "fomc-2026-07-22",
+      "indicator": "fedfunds",
+      "relatedIndicators": [
+        "curve"
+      ],
+      "name": "FOMC Rate Decision & Policy Statement",
+      "date": "2026-07-22",
+      "time": "14:00 ET",
+      "period": "Jul 2026",
+      "agency": "Federal Reserve",
+      "description": "Federal Open Market Committee target range for federal funds rate."
+    },
+    {
+      "id": "nfci-2026-07-23",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-07-23",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-23",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-07-23",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-07-23",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-23",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-final-2026-07-24",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-07-24",
+      "time": "10:00 ET",
+      "period": "Jul 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-07-27",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-07-27",
+      "time": "16:30 ET",
+      "period": "Week of 2026-07-27",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-07-30",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-07-30",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-30",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-07-30",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-07-30",
+      "time": "08:30 ET",
+      "period": "Q2 Advance",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-07-30",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-07-30",
+      "time": "08:30 ET",
+      "period": "Week of 2026-07-30",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-07-31",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-07-31",
+      "time": "08:30 ET",
+      "period": "Jun 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "gas-2026-08-03",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-08-03",
+      "time": "16:30 ET",
+      "period": "Week of 2026-08-03",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-08-04",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-08-04",
+      "time": "10:00 ET",
+      "period": "Jun 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2026-08-06",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-08-06",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-06",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-08-06",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-08-06",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-06",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-08-07",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-08-07",
+      "time": "08:30 ET",
+      "period": "Jul 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-08-10",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-08-10",
+      "time": "16:30 ET",
+      "period": "Week of 2026-08-10",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "cpi-2026-08-12",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-08-12",
+      "time": "08:30 ET",
+      "period": "Jul 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "nfci-2026-08-13",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-08-13",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-13",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-08-13",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-08-13",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-13",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "retail-2026-08-14",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-08-14",
+      "time": "08:30 ET",
+      "period": "Jul 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "umich-prelim-2026-08-14",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-08-14",
+      "time": "10:00 ET",
+      "period": "Aug 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "gas-2026-08-17",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-08-17",
+      "time": "16:30 ET",
+      "period": "Week of 2026-08-17",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "indpro-2026-08-17",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-08-17",
+      "time": "09:15 ET",
+      "period": "Jul 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "permits-2026-08-18",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-08-18",
+      "time": "08:30 ET",
+      "period": "Jul 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "nfci-2026-08-20",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-08-20",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-20",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-08-20",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-08-20",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-20",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "gas-2026-08-24",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-08-24",
+      "time": "16:30 ET",
+      "period": "Week of 2026-08-24",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-08-27",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-08-27",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-27",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-08-27",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-08-27",
+      "time": "08:30 ET",
+      "period": "Q2 Second",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-08-27",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-08-27",
+      "time": "08:30 ET",
+      "period": "Week of 2026-08-27",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-08-28",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-08-28",
+      "time": "08:30 ET",
+      "period": "Jul 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "umich-final-2026-08-28",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-08-28",
+      "time": "10:00 ET",
+      "period": "Aug 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-08-31",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-08-31",
+      "time": "16:30 ET",
+      "period": "Week of 2026-08-31",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-09-01",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-09-01",
+      "time": "10:00 ET",
+      "period": "Jul 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2026-09-03",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-09-03",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-03",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-09-03",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-09-03",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-03",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-09-04",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-09-04",
+      "time": "08:30 ET",
+      "period": "Aug 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-09-07",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-09-07",
+      "time": "16:30 ET",
+      "period": "Week of 2026-09-07",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-09-10",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-09-10",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-10",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-09-10",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-09-10",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-10",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "cpi-2026-09-11",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-09-11",
+      "time": "08:30 ET",
+      "period": "Aug 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "umich-prelim-2026-09-11",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-09-11",
+      "time": "10:00 ET",
+      "period": "Sep 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "gas-2026-09-14",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-09-14",
+      "time": "16:30 ET",
+      "period": "Week of 2026-09-14",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "retail-2026-09-15",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-09-15",
+      "time": "08:30 ET",
+      "period": "Aug 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "fomc-2026-09-16",
+      "indicator": "fedfunds",
+      "relatedIndicators": [
+        "curve"
+      ],
+      "name": "FOMC Rate Decision & Policy Statement",
+      "date": "2026-09-16",
+      "time": "14:00 ET",
+      "period": "Sep 2026",
+      "agency": "Federal Reserve",
+      "description": "Federal Open Market Committee target range for federal funds rate."
+    },
+    {
+      "id": "indpro-2026-09-16",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-09-16",
+      "time": "09:15 ET",
+      "period": "Aug 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "nfci-2026-09-17",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-09-17",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-17",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-09-17",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-09-17",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-17",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "permits-2026-09-18",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-09-18",
+      "time": "08:30 ET",
+      "period": "Aug 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "gas-2026-09-21",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-09-21",
+      "time": "16:30 ET",
+      "period": "Week of 2026-09-21",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-09-24",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-09-24",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-24",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-09-24",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-09-24",
+      "time": "08:30 ET",
+      "period": "Q3 Third",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-09-24",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-09-24",
+      "time": "08:30 ET",
+      "period": "Week of 2026-09-24",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-09-25",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-09-25",
+      "time": "08:30 ET",
+      "period": "Aug 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "umich-final-2026-09-25",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-09-25",
+      "time": "10:00 ET",
+      "period": "Sep 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-09-28",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-09-28",
+      "time": "16:30 ET",
+      "period": "Week of 2026-09-28",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-10-01",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-10-01",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-01",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-10-01",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-10-01",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-01",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-10-02",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-10-02",
+      "time": "08:30 ET",
+      "period": "Sep 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-10-05",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-10-05",
+      "time": "16:30 ET",
+      "period": "Week of 2026-10-05",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-10-06",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-10-06",
+      "time": "10:00 ET",
+      "period": "Aug 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2026-10-08",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-10-08",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-08",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-10-08",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-10-08",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-08",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-prelim-2026-10-09",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-10-09",
+      "time": "10:00 ET",
+      "period": "Oct 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "cpi-2026-10-12",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-10-12",
+      "time": "08:30 ET",
+      "period": "Sep 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "gas-2026-10-12",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-10-12",
+      "time": "16:30 ET",
+      "period": "Week of 2026-10-12",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "retail-2026-10-15",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-10-15",
+      "time": "08:30 ET",
+      "period": "Sep 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "nfci-2026-10-15",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-10-15",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-15",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-10-15",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-10-15",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-15",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "indpro-2026-10-16",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-10-16",
+      "time": "09:15 ET",
+      "period": "Sep 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "gas-2026-10-19",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-10-19",
+      "time": "16:30 ET",
+      "period": "Week of 2026-10-19",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "permits-2026-10-19",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-10-19",
+      "time": "08:30 ET",
+      "period": "Sep 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "nfci-2026-10-22",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-10-22",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-22",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-10-22",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-10-22",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-22",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-final-2026-10-23",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-10-23",
+      "time": "10:00 ET",
+      "period": "Oct 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-10-26",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-10-26",
+      "time": "16:30 ET",
+      "period": "Week of 2026-10-26",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-10-29",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-10-29",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-29",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-10-29",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-10-29",
+      "time": "08:30 ET",
+      "period": "Q3 Advance",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-10-29",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-10-29",
+      "time": "08:30 ET",
+      "period": "Week of 2026-10-29",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-10-30",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-10-30",
+      "time": "08:30 ET",
+      "period": "Sep 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "gas-2026-11-02",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-11-02",
+      "time": "16:30 ET",
+      "period": "Week of 2026-11-02",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-11-03",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-11-03",
+      "time": "10:00 ET",
+      "period": "Sep 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "fomc-2026-11-04",
+      "indicator": "fedfunds",
+      "relatedIndicators": [
+        "curve"
+      ],
+      "name": "FOMC Rate Decision & Policy Statement",
+      "date": "2026-11-04",
+      "time": "14:00 ET",
+      "period": "Nov 2026",
+      "agency": "Federal Reserve",
+      "description": "Federal Open Market Committee target range for federal funds rate."
+    },
+    {
+      "id": "nfci-2026-11-05",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-11-05",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-05",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-11-05",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-11-05",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-05",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-11-06",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-11-06",
+      "time": "08:30 ET",
+      "period": "Oct 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-11-09",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-11-09",
+      "time": "16:30 ET",
+      "period": "Week of 2026-11-09",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-11-12",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-11-12",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-12",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "cpi-2026-11-12",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-11-12",
+      "time": "08:30 ET",
+      "period": "Oct 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "claims-2026-11-12",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-11-12",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-12",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-prelim-2026-11-13",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-11-13",
+      "time": "10:00 ET",
+      "period": "Nov 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "retail-2026-11-16",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-11-16",
+      "time": "08:30 ET",
+      "period": "Oct 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "gas-2026-11-16",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-11-16",
+      "time": "16:30 ET",
+      "period": "Week of 2026-11-16",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "indpro-2026-11-16",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-11-16",
+      "time": "09:15 ET",
+      "period": "Oct 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "permits-2026-11-18",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-11-18",
+      "time": "08:30 ET",
+      "period": "Oct 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "nfci-2026-11-19",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-11-19",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-19",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-11-19",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-11-19",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-19",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "gas-2026-11-23",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-11-23",
+      "time": "16:30 ET",
+      "period": "Week of 2026-11-23",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-11-26",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-11-26",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-26",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-11-26",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-11-26",
+      "time": "08:30 ET",
+      "period": "Q3 Second",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-11-26",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-11-26",
+      "time": "08:30 ET",
+      "period": "Week of 2026-11-26",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-11-27",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-11-27",
+      "time": "08:30 ET",
+      "period": "Oct 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "umich-final-2026-11-27",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-11-27",
+      "time": "10:00 ET",
+      "period": "Nov 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-11-30",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-11-30",
+      "time": "16:30 ET",
+      "period": "Week of 2026-11-30",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2026-12-01",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2026-12-01",
+      "time": "10:00 ET",
+      "period": "Oct 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2026-12-03",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-12-03",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-03",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-12-03",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-12-03",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-03",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2026-12-04",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2026-12-04",
+      "time": "08:30 ET",
+      "period": "Nov 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2026-12-07",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-12-07",
+      "time": "16:30 ET",
+      "period": "Week of 2026-12-07",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "fomc-2026-12-09",
+      "indicator": "fedfunds",
+      "relatedIndicators": [
+        "curve"
+      ],
+      "name": "FOMC Rate Decision & Policy Statement",
+      "date": "2026-12-09",
+      "time": "14:00 ET",
+      "period": "Dec 2026",
+      "agency": "Federal Reserve",
+      "description": "Federal Open Market Committee target range for federal funds rate."
+    },
+    {
+      "id": "nfci-2026-12-10",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-12-10",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-10",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-12-10",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-12-10",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-10",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "cpi-2026-12-11",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2026-12-11",
+      "time": "08:30 ET",
+      "period": "Nov 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "umich-prelim-2026-12-11",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2026-12-11",
+      "time": "10:00 ET",
+      "period": "Dec 2026 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "gas-2026-12-14",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-12-14",
+      "time": "16:30 ET",
+      "period": "Week of 2026-12-14",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "retail-2026-12-15",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2026-12-15",
+      "time": "08:30 ET",
+      "period": "Nov 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "indpro-2026-12-16",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2026-12-16",
+      "time": "09:15 ET",
+      "period": "Nov 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "nfci-2026-12-17",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-12-17",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-17",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-12-17",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-12-17",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-17",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "permits-2026-12-18",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2026-12-18",
+      "time": "08:30 ET",
+      "period": "Nov 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "gas-2026-12-21",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-12-21",
+      "time": "16:30 ET",
+      "period": "Week of 2026-12-21",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-12-24",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-12-24",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-24",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2026-12-24",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-12-24",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-24",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2026-12-25",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2026-12-25",
+      "time": "08:30 ET",
+      "period": "Nov 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "umich-final-2026-12-25",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2026-12-25",
+      "time": "10:00 ET",
+      "period": "Dec 2026 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2026-12-28",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2026-12-28",
+      "time": "16:30 ET",
+      "period": "Week of 2026-12-28",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2026-12-31",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2026-12-31",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-31",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2026-12-31",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2026-12-31",
+      "time": "08:30 ET",
+      "period": "Q4 Third",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2026-12-31",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2026-12-31",
+      "time": "08:30 ET",
+      "period": "Week of 2026-12-31",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "jobs-2027-01-01",
+      "indicator": "payrolls",
+      "relatedIndicators": [
+        "recession",
+        "wages"
+      ],
+      "name": "Employment Situation (Payrolls & Wages)",
+      "date": "2027-01-01",
+      "time": "08:30 ET",
+      "period": "Dec 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Nonfarm payroll change, unemployment rate, and average hourly earnings."
+    },
+    {
+      "id": "gas-2027-01-04",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2027-01-04",
+      "time": "16:30 ET",
+      "period": "Week of 2027-01-04",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "jolts-2027-01-05",
+      "indicator": "openings",
+      "relatedIndicators": [
+        "quits"
+      ],
+      "name": "JOLTS (Job Openings & Quits)",
+      "date": "2027-01-05",
+      "time": "10:00 ET",
+      "period": "Nov 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Total job openings, hiring rate, and voluntary quits rate."
+    },
+    {
+      "id": "nfci-2027-01-07",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2027-01-07",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-07",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2027-01-07",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2027-01-07",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-07",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-prelim-2027-01-08",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Prelim)",
+      "date": "2027-01-08",
+      "time": "10:00 ET",
+      "period": "Jan 2027 Prelim",
+      "agency": "University of Michigan",
+      "description": "Early read on household consumer optimism and inflation expectations."
+    },
+    {
+      "id": "gas-2027-01-11",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2027-01-11",
+      "time": "16:30 ET",
+      "period": "Week of 2027-01-11",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "cpi-2027-01-12",
+      "indicator": "inflation",
+      "relatedIndicators": [
+        "breakeven"
+      ],
+      "name": "Consumer Price Index (CPI)",
+      "date": "2027-01-12",
+      "time": "08:30 ET",
+      "period": "Dec 2026",
+      "agency": "Bureau of Labor Statistics",
+      "description": "Consumer prices for all urban consumers, headline and core."
+    },
+    {
+      "id": "nfci-2027-01-14",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2027-01-14",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-14",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2027-01-14",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2027-01-14",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-14",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "retail-2027-01-15",
+      "indicator": "retail",
+      "relatedIndicators": [],
+      "name": "Advance Monthly Retail Sales",
+      "date": "2027-01-15",
+      "time": "08:30 ET",
+      "period": "Dec 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Consumer spending at retail and food services across the US."
+    },
+    {
+      "id": "indpro-2027-01-15",
+      "indicator": "indpro",
+      "relatedIndicators": [],
+      "name": "Industrial Production & Capacity",
+      "date": "2027-01-15",
+      "time": "09:15 ET",
+      "period": "Dec 2026",
+      "agency": "Federal Reserve",
+      "description": "Output of factories, mines, and utilities in the United States."
+    },
+    {
+      "id": "gas-2027-01-18",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2027-01-18",
+      "time": "16:30 ET",
+      "period": "Week of 2027-01-18",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "permits-2027-01-18",
+      "indicator": "permits",
+      "relatedIndicators": [
+        "housing"
+      ],
+      "name": "New Residential Construction & Permits",
+      "date": "2027-01-18",
+      "time": "08:30 ET",
+      "period": "Dec 2026",
+      "agency": "U.S. Census Bureau",
+      "description": "Authorized building permits and housing starts for new private housing."
+    },
+    {
+      "id": "nfci-2027-01-21",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2027-01-21",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-21",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2027-01-21",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2027-01-21",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-21",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "umich-final-2027-01-22",
+      "indicator": "sentiment",
+      "relatedIndicators": [],
+      "name": "UMich Consumer Sentiment (Final)",
+      "date": "2027-01-22",
+      "time": "10:00 ET",
+      "period": "Jan 2027 Final",
+      "agency": "University of Michigan",
+      "description": "Final monthly reading of consumer confidence and inflation views."
+    },
+    {
+      "id": "gas-2027-01-25",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2027-01-25",
+      "time": "16:30 ET",
+      "period": "Week of 2027-01-25",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "fomc-2027-01-27",
+      "indicator": "fedfunds",
+      "relatedIndicators": [
+        "curve"
+      ],
+      "name": "FOMC Rate Decision & Policy Statement",
+      "date": "2027-01-27",
+      "time": "14:00 ET",
+      "period": "Jan 2027",
+      "agency": "Federal Reserve",
+      "description": "Federal Open Market Committee target range for federal funds rate."
+    },
+    {
+      "id": "nfci-2027-01-28",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2027-01-28",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-28",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "gdp-2027-01-28",
+      "indicator": "gdp",
+      "relatedIndicators": [],
+      "name": "Gross Domestic Product (GDP)",
+      "date": "2027-01-28",
+      "time": "08:30 ET",
+      "period": "Q4 Advance",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Real output of goods and services produced by labor and property in the US."
+    },
+    {
+      "id": "claims-2027-01-28",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2027-01-28",
+      "time": "08:30 ET",
+      "period": "Week of 2027-01-28",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    },
+    {
+      "id": "pce-2027-01-29",
+      "indicator": "corepce",
+      "relatedIndicators": [
+        "savings"
+      ],
+      "name": "PCE Price Index & Personal Saving Rate",
+      "date": "2027-01-29",
+      "time": "08:30 ET",
+      "period": "Dec 2026",
+      "agency": "Bureau of Economic Analysis",
+      "description": "Fed's preferred inflation gauge and household personal saving rate."
+    },
+    {
+      "id": "gas-2027-02-01",
+      "indicator": "gas",
+      "relatedIndicators": [
+        "oil"
+      ],
+      "name": "EIA Weekly Retail Gasoline",
+      "date": "2027-02-01",
+      "time": "16:30 ET",
+      "period": "Week of 2027-02-01",
+      "agency": "Energy Information Administration",
+      "description": "National average price for regular retail gasoline."
+    },
+    {
+      "id": "nfci-2027-02-04",
+      "indicator": "nfci",
+      "relatedIndicators": [
+        "credit"
+      ],
+      "name": "Chicago Fed Financial Conditions Index",
+      "date": "2027-02-04",
+      "time": "08:30 ET",
+      "period": "Week of 2027-02-04",
+      "agency": "Federal Reserve Bank of Chicago",
+      "description": "Comprehensive weekly measure of US financial conditions in debt and equity."
+    },
+    {
+      "id": "claims-2027-02-04",
+      "indicator": "claims",
+      "relatedIndicators": [],
+      "name": "Initial Jobless Claims",
+      "date": "2027-02-04",
+      "time": "08:30 ET",
+      "period": "Week of 2027-02-04",
+      "agency": "Department of Labor",
+      "description": "Weekly count of first-time filings for state unemployment benefits."
+    }
+  ]
+}
